@@ -25,9 +25,18 @@
     <main class="mt-0">
         <section class="bg-gradient my-4 pt-5">
             <div class="container py-3">
-                <h1 class="text-white">
-                    <i data-feather="home"></i> <?= $village['village-name'] ?>
-                </h1>
+                <div class="row">
+                    <div class="col">
+                        <h1 class="text-white">
+                            <i data-feather="home"></i> <?= $village['village-name'] ?>
+                        </h1>
+                    </div>
+                    <div class="col-auto">
+                        <a href="/village/new-habitant/" class="btn btn-outline-light rounded-pill px-3 py-2">
+                            <i data-feather="user-plus" class="mr-1"></i> Ajouter un habitant
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 		<section>
