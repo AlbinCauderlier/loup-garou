@@ -66,10 +66,10 @@
 	// Configuration option.
 	// You can change this if you feel that you need to.
 	// Developers, you may wish to add more fields to the form, in which case you must be sure to add them here.	
-	$subject = "Iris - Registration confirmation of ".$firstname." ".$lastname;
+	$subject = "Loups Garous - Registration confirmation of ".$firstname." ".$lastname;
 
 	$msg  = 'Welcome '.$firstname.' '.$lastname.', Your account '.$email.' has been registered for the company '.$company_name.' - '.$company_country.PHP_EOL.PHP_EOL;
-	$msg .= 'You can now access the service on :<a href="'.ROOT_URL.'/user/" title="Iris">Argos Logisitic</a>';
+	$msg .= 'You can now access the service on :<a href="'.ROOT_URL.'/user/" title="Loups Garous">Argos Logisitic</a>';
 
 	$_SESSION["email"]=$email;
 

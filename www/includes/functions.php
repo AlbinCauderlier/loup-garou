@@ -359,7 +359,7 @@ function db_log( $user, $action, $data = NULL ){
 	$query_logs = "INSERT INTO `logs`	(`log-id`,`log-timestamp`,`log-user`,`log-action`,`log-data`)
     						VALUE 		(NULL, NOW() ,'".$user."','".$action."','".$data."')";
 
-    $conn_logs = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"iris_logs");
+    $conn_logs = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-logs");
     mysqli_query($conn_logs, $query_logs);
 
     mysqli_close($conn_logs);

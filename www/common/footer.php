@@ -9,15 +9,15 @@
 			<div class="col-md-4 mb-3">
 				<h2>
 		            <a href="/clients/">
-		                <img src="<?=ROOT_URL?>/images/iris-logo2.png" style="max-height:47px;" alt="Iris"/>
+		                <img src="<?=ROOT_URL?>/images/iris-logo2.png" style="max-height:47px;" alt="Loups Garous"/>
 		            </a>
 				</h2>
-				© Iris 2020
+				© Loups Garous 2020
 			</div>
 			<div class="col-md-4 mb-3">
 				<ul>
 					<li>
-						<a href="/about/" title="About">About Iris</a>
+						<a href="/about/" title="About">About Loups Garous</a>
 					</li>
 					<li>
 						<a href="/user-guide/" title="User Guide">User Guide</a>
