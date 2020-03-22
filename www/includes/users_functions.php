@@ -1,7 +1,7 @@
 <?php
 
 function get_user_id( $email_address ){
-    $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"iris_users");
+    $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-users");
 
     $query = "SELECT `user-id` FROM `users-data` WHERE `users-data`.`user-email-address` = '".$email_address."' LIMIT 1";
     $line = mysqli_query($conn, $query);

@@ -34,7 +34,7 @@
       											`user-lastname` = '".$user_lastname."' 
 										WHERE 	`users_data`.`user-email-address` = '".$_POST['user-email-address']."'";
 
-	$mysqli_users = new mysqli(DB_URL,DB_USER,DB_PASSWORD,"iris_users");
+	$mysqli_users = new mysqli(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-users");
 	if ($mysqli_users->connect_errno) {
 	    printf("Connect failed: %s\n", $mysqli_users->connect_error);
 	    exit();
