@@ -27,6 +27,27 @@
                         </div>
                   </div>
                 </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="dropdown border-0 m-0 p-0" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+                            <a class="nav-link px-3 text-center pb-0 <?php if( strpos($_SESSION['page'], 'client') !== false ) echo('active');?>">
+                                <i data-feather="user"></i><br/>Joueurs
+                            </a>
+                        </button>
+                        <div class="dropdown-menu">
+                        <?php
+                            if( $_SESSION['page'] === 'games' ){
+                                echo('<a class="dropdown-item text-primary disabled">');
+                            }
+                            else{
+                                echo('<a href="/users/" class="dropdown-item">');
+                            }
+                            echo('<i data-feather="user" class="mr-1"></i>All');
+                            echo('</a>');
+                        ?>
+                        </div>
+                  </div>
+                </li>
             </ul>
             <div class="col-auto">
                 <div class="header-wrap float-right my-2 pt-1">
