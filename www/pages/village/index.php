@@ -10,7 +10,15 @@
 
     $village = json_decode(callAPI('GET',API_URL.'/api/villages/'.$_GET['p2'].'/'), true);
 
+    $all_habitants = json_decode(callAPI('GET',API_URL.'/api/habitants/'), true);
 
+    $habitants = [];
+
+    foreach( $all_habitants as $habitant ){
+        if( $habitant['habitant-village'] === $_GET['p2']){
+            $habitants[] = $habitant;
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,11 +51,46 @@
         </section>
 		<section>
 			<div class="container pt-4">
-                Bienvenue !
-
+                <div class="row">
+                    <div class="col-6">
+                        <h2>Conteur</h2>
+                        <?php
+                            foreach( $habitants as $habitant ){
+                                if( $habitant['habitant-card'] === "storyteller" ){
+                                    echo('<label>'.$habitant['habitant-user'].'</label>');
+                                }
+                            }
+                        ?>
+                    </div>
+                    <div class="col-6">
+                        <h2>Visio</h2>
+                    </div>
+                </div>
+                <hr class="my-5"/>
+                <h2>Vivants</h2>
+                <div class="row">
+                    <?php
+                        foreach( $habitants as $habitant ){
+                            if( empty( $habitant['habitant-card-displayed'] ) ){
+                                echo('<div class="col-md-3 text-center">');
+                                    echo('<h3>'.$habitant['habitant-user'].'</h3>');
+                                    echo('<img src="/images/cards/back.png" width="150px"/>');
+                                echo('</div>');
+                            }
+                        }
+                    ?>
+                </div>
+                <hr class="my-5"/>
+                <h2>Morts</h2>
                 <?php
-                    $habitants = json_decode(callAPI('GET',API_URL.'/api/habitants/'), true);
-
+                    foreach( $habitants as $habitant ){
+                        if( !empty( $habitant['habitant-card-displayed'] ) ){
+                            echo('<label>'.$habitant['habitant-user'].'</label>');
+                        }
+                    }
+                ?>
+                <hr class="my-5"/>
+                <?php
                     print_r( $habitants );
                 ?>
 			</div>
