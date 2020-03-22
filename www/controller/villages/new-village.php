@@ -34,8 +34,6 @@
 	$query_new_village = "INSERT INTO `villages` (`village-id`, `village-name`, `village-jitsi-link`, `village-state`) 
 										VALUES (NULL, '".$village_name."', 'https://meet.jit.si/".$village_name."', 'WAITING')";
 
-	echo( $query_new_village );
-
 	$conn_village = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,DB_NAME);
 
 	mysqli_query($conn_village, $query_new_village);
