@@ -1,6 +1,6 @@
 <?php
 
-include_once("iris_functions.php");
+include_once("loups_garous_functions.php");
 include_once("users_functions.php");
 
 

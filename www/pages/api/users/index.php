@@ -25,7 +25,7 @@
     if( isset($url[1]) && !empty($url[1])){
         $query = "SELECT * FROM `users-data` WHERE `user-id` = '".$url[1]."' LIMIT 1;";
 
-        $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"iris_users");
+        $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-users");
         if (!$conn) {
             $result=array_merge($result,array("success" => false ) );
             $result=array_merge($result,array("message" => "DB connexion failed" ) );
@@ -75,7 +75,7 @@
     }
     $query .= " ;";
 
-    $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"iris_users");
+    $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-users");
     if (!$conn) {
         echo(json_encode( array("error" => "DB connexion failed") ));
         return;

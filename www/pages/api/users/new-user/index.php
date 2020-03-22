@@ -85,14 +85,14 @@
     }
 
 
-    $mysqli_user= new mysqli(DB_URL,DB_USER,DB_PASSWORD,"iris_users");
+    $mysqli_user= new mysqli(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-users");
     if ($mysqli_user->connect_errno) {
         echo(json_encode( array("error" => "DB connection failed") ));
         printf("Connect failed: %s\n", $mysqli_user->connect_error);
         return;
     }
 
-    $mysqli_logs = new mysqli(DB_URL,DB_USER,DB_PASSWORD,"iris_logs");
+    $mysqli_logs = new mysqli(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-logs");
     if ($mysqli_logs->connect_errno) {
         printf("Connect failed: %s\n", $mysqli_logs->connect_error);
         exit();

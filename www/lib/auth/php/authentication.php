@@ -9,7 +9,7 @@
 function is_an_user_recorded( $email_address ){
     $query = "SELECT COUNT(*) FROM `users-data` WHERE `user-email-address` = '".$email_address."' LIMIT 1";
 
-    $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"iris_users");
+    $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-users");
     $users = mysqli_query($conn, $query);
 
 	$result=mysqli_fetch_array($users);
@@ -70,7 +70,7 @@ function is_login_confirmed($email_address){
 
 
 function is_login_recorded($email_address){
-	$conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"iris_users");
+	$conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-users");
 
     $query = "SELECT COUNT(*) FROM `users-data` WHERE `user-email-address` = '".$email_address."' LIMIT 1";
     $users = mysqli_query($conn, $query);
@@ -100,7 +100,7 @@ function is_login_recorded($email_address){
 
 
 function is_email_otp_correct($user_id, $OTP){
-	$conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"iris_users");
+	$conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-users");
 
     $query = "SELECT COUNT(*) FROM `users-auth` WHERE `user-id` = '".$user_id."' AND `user-email-confirmation-otp` = '".$OTP."' LIMIT 1";
     $users = mysqli_query($conn, $query);
@@ -144,7 +144,7 @@ function get_user_authentication_historic($email_address){
 
 
 function update_authentication_attempt($user_id){
-	$conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"iris_users");
+	$conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-users");
 
     $query = "UPDATE `users-auth` SET `user-last-connexion-attempt-date` = '".date("Y-m-d hh:mm:ss")."' WHERE `users-auth`.`user-id` = '".$user_id."'";
     mysqli_query($conn, $query);
@@ -155,7 +155,7 @@ function update_authentication_attempt($user_id){
 }
 
 function update_authentication_succeed($user_id){
-	$conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"iris_users");
+	$conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-users");
 
     $query = "UPDATE `users-auth` SET `user-last-connexion-date` = '".date("Y-m-d hh:mm:ss")."' WHERE `users-auth`.`user-id` = '".$user_id."'";
     mysqli_query($conn, $query);
@@ -172,7 +172,7 @@ function add_authentication_action($email_address, $authentication_action_type){
 
 
 function change_password( $user_id, $current_password, $new_password ){
-	$conn_auth = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"iris_users");
+	$conn_auth = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-users");
 
     $query = "UPDATE `users-auth` SET `user-password` = '".$new_password."' WHERE `users-auth`.`user-id` = '".$user_id."' AND `users-auth`.`user-password` = '".$current_password."' LIMIT 1";
     mysqli_query($conn_auth, $query);
@@ -195,7 +195,7 @@ function change_password( $user_id, $current_password, $new_password ){
 function is_password_valid($user_id, $password){
     $query = "SELECT COUNT(*) FROM `users-auth` WHERE `user-id` = '".$user_id."' AND `user-password` = '".$password."' LIMIT 1";
 
-    $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"iris_users");
+    $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-users");
     $users = mysqli_query($conn, $query);
 
 	$result=mysqli_fetch_array($users);
@@ -212,7 +212,7 @@ function is_password_valid($user_id, $password){
 
 
 function is_user_email_address_confirmed( $user_id ){
-	$conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"iris_users");
+	$conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-users");
 
     $query = "SELECT COUNT(*) FROM `users-auth` WHERE `user-id` = '".$user_id."' AND `is-user-email-address-confirmed` = '1' AND `user-email-confirmation-otp` IS NULL LIMIT 1";
     $users = mysqli_query($conn, $query);
@@ -230,7 +230,7 @@ function is_user_email_address_confirmed( $user_id ){
 }
 
 function set_user_email_address_confirmed( $user_id ){
-	$conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"iris_users");
+	$conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-users");
 
     $query = "UPDATE `users-auth` SET `user-email-confirmation-otp` = NULL, `is-user-email-address-confirmed` = '1' WHERE `users-auth`.`user-id` = '".$user_id."'";
     mysqli_query($conn, $query);

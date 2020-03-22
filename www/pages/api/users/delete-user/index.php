@@ -25,7 +25,7 @@
     $query_user = "DELETE FROM `users-data` WHERE `user-id` = '".$user_id."' LIMIT 1;";
 
 
-    $mysqli_user = new mysqli(DB_URL,DB_USER,DB_PASSWORD,"iris_users");
+    $mysqli_user = new mysqli(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-users");
     if ($mysqli_user->connect_errno) {
         echo(json_encode( array("error" => "DB connection failed") ));
         printf("Connect failed: %s\n", $mysqli_user->connect_error);
