@@ -18,7 +18,10 @@ function get_user_id( $email_address ){
 	return $result['user-id'];
 }
 
-
+function show_the_card( $habitant ){
+    echo('<img src="/images/cards/'.$habitant['habitant-card'].'.png" width="150px"/><br/>');
+    echo('<label>'.$habitant['habitant-card'].'</label>');
+}
 
 
 ?>

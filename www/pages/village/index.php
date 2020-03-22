@@ -13,10 +13,27 @@
     $all_habitants = json_decode(callAPI('GET',API_URL.'/api/habitants/'), true);
 
     $habitants = [];
+    $storytellers = [];
+
+    $is_a_storyteller = false;
+    $is_alive = true;
 
     foreach( $all_habitants as $habitant ){
         if( $habitant['habitant-village'] === $_GET['p2']){
-            $habitants[] = $habitant;
+            if( $habitant['habitant-card'] === "storyteller"){
+                $storytellers[] = $habitant;
+
+                if( $user_data['user-id'] === $habitant['habitant-user']){
+                    $is_a_storyteller = true;
+                }
+            }
+            else{
+                $habitants[] = $habitant;
+
+                if( $user_data['user-id'] === $habitant['habitant-user'] && !empty( $habitant['habitant-card-displayed'] ) ){
+                    $is_alive = false;
+                }
+            }
         }
     }
 ?>
@@ -52,23 +69,25 @@
 		<section>
 			<div class="container pt-4">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
                         <h2>Conteur</h2>
                         <?php
-                            foreach( $habitants as $habitant ){
-                                if( $habitant['habitant-card'] === "storyteller" ){
-                                    echo('<label>'.$habitant['habitant-user'].'</label><br/>');
-                                }
+                            foreach( $storytellers as $storyteller ){
+                                echo('<label>'.$storyteller['habitant-user'].'</label><br/>');
                             }
                         ?>
                     </div>
-                    <div class="col-6">
-                        <h2>Visio</h2>
+                    <div class="col-4">
+                        <h2>Visio des Habitants</h2>
                         <a href="<?= $village['village-jitsi-link'] ?>" target="_blanck"><?= $village['village-jitsi-link'] ?></a>
+                    </div>
+                    <div class="col-4">
+                        <h2>Visio des Loups Garous</h2>
+                        <a href="<?= $village['village-jitsi-link'] ?>loupsgarous" target="_blanck"><?= $village['village-jitsi-link'] ?>loupsgarous</a>
                     </div>
                 </div>
                 <hr class="my-5"/>
-                <h2>Vivants</h2>
+                <h2>Habitants</h2>
                 <div class="row">
                     <?php
                         foreach( $habitants as $habitant ){
@@ -76,10 +95,21 @@
                                 echo('<div class="col-md-3 text-center">');
                                     echo('<h3>'.$habitant['habitant-user'].'</h3>');
 
+                                    // Le joueur peut voir sa carte
                                     if( $habitant['habitant-user'] === $user_data['user-id']){
-                                        echo('<img src="/images/cards/'.$habitant['habitant-card'].'.png" width="150px"/><br/>');
-                                        echo('<label>'.$habitant['habitant-card'].'</label>');
+                                        show_the_card( $habitant );
                                     }
+                                    
+                                    // Si le joueur est mort : Voir les cartes
+                                    elseif( !$is_alive ){
+                                        show_the_card( $habitant );   
+                                    }
+
+                                    // Si le joueur est le conteur : Voir les cartes
+                                    elseif( $is_a_storyteller ){
+                                        show_the_card( $habitant );   
+                                    }
+
                                     else{
                                         echo('<img src="/images/cards/back.png" width="150px"/>');
                                     }
@@ -89,15 +119,14 @@
                     ?>
                 </div>
                 <hr class="my-5"/>
-                <h2>Morts</h2>
+                <h2>Cimetière</h2>
                 <div class="row">
                     <?php
                         foreach( $habitants as $habitant ){
                             if( !empty( $habitant['habitant-card-displayed'] ) && $habitant['habitant-card'] !== "storyteller"  ){
                                 echo('<div class="col-md-3 text-center">');
                                     echo('<h3>'.$habitant['habitant-user'].'</h3>');
-                                    echo('<img src="/images/cards/'.$habitant['habitant-card'].'.png" width="150px"/><br/>');
-                                    echo('<label>'.$habitant['habitant-card'].'</label>');
+                                    show_the_card( $habitant );
                                 echo('</div>');
                             }
                         }
@@ -105,7 +134,7 @@
                 </div>
                 <hr class="my-5"/>
                 <?php
-                    print_r( $habitants );
+                    // print_r( $habitants );
                 ?>
 			</div>
 		</section>
