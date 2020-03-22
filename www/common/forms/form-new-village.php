@@ -1,4 +1,4 @@
-                        <form id="village-form" action="/controller/villages/new-village.php" method="post" class="mb-5 needs-validation" novalidate>
+                        <form id="village-form" action="/controller/villages/new-village.php" method="post" class="mb-5">
                             <h3>Le village</h3>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">

@@ -1,4 +1,4 @@
-                        <form id="habitant-form" action="/controller/villages/new-village.php" method="post" class="mb-5 needs-validation" novalidate>
+                        <form id="habitant-form" action="/controller/habitants/new-habitant.php" method="post" class="mb-5">
                             <div class="form-row">
                                 <div class="col-md-4">
                                     <h3>Votre village</h3>
@@ -8,7 +8,7 @@
                                                 <i data-feather="home"></i>
                                             </div>
                                         </div>
-                                        <input class="form-control" id="village-name" name="village-name" type="text" value="<?= $village['village-name'] ?>" required readonly/>
+                                        <input class="form-control" id="village-id" name="village-id" type="text" value="<?= $village['village-id'] ?>" required readonly/>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -19,7 +19,7 @@
                                                 <i data-feather="user"></i>
                                             </div>
                                         </div>
-                                        <select id="user" name="user-profile" class="form-control custom-select border-left-0" required>
+                                        <select id="user-id" name="user-id" class="form-control custom-select border-left-0" required>
                                             <option disabled selected>Joueur</option>
                                         <?php
                                             $users = json_decode(callAPI('GET',API_URL.'/api/users/'), true);
@@ -39,7 +39,7 @@
                                                 <i data-feather="tag"></i>
                                             </div>
                                         </div>
-                                        <select id="user-card" name="user-card" class="form-control custom-select border-left-0" required>
+                                        <select id="card-name" name="card-name" class="form-control custom-select border-left-0" required>
                                             <option disabled selected>Carte</option>
                                             <option value="storyteller">Conteur</option>
                                             <option value="citizen">Villageois</option>
