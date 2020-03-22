@@ -20,7 +20,7 @@
 	<section class="py-5">
 		<div class="container py-5 text-center">
 			<h2 class="pb-4">
-				<img src="<?=ROOT_URL?>/images/loups-garous-logo.png" style="max-width: 300px;" alt="Loups Garous"/>
+				<img src="<?=ROOT_URL?>/images/loups-garous-logo.png" style="max-width: 800px;" alt="Loups Garous"/>
 			</h2>
 			<div class="row mb-5">
 				<div class="col-md-4 mx-auto">
