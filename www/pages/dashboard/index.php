@@ -30,8 +30,31 @@
         </section>
 		<section>
 			<div class="container pt-4">
-                <h1></h1>
-                
+                <table class="table table-hover table-striped border-bottom mb-4 dynamic-datatable">
+                    <thead>
+                        <tr class="text-center">
+                            <th>Village Name</th>
+                            <th>Jitsi</th>
+                            <th>Etat</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-borderless text-nowrap">
+                    <?php
+                        $villages = json_decode(callAPI('GET',API_URL.'/api/villages/'), true);
+
+                        if( !empty($villages) ){
+                            foreach( $villages as $village ){
+
+                                echo('<tr>');
+                                    echo('<td><a href="/village/'.$village['village-id'].'/">'.$village['village-name'].'</a></td>');
+                                    echo('<td><a href="'.$village['village-jitsi-link'].'" target="_blank">'.$village['village-jitsi-link'].'</a></td>');
+                                    echo('<td>'.$village['village-state'].'</td>');
+                                echo('</tr>');
+                            }
+                        }
+                    ?>
+                    </tbody>
+                </table>
 			</div>
 		</section>
     </main>

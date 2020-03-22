@@ -39,6 +39,6 @@
 	mysqli_query($conn_village, $query_new_village);
 	mysqli_close($conn_village);
 
-	header("location: /games/");
+	header("location: /dashboard/");
 	exit();
 ?>

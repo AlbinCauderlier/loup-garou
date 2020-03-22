@@ -16,13 +16,10 @@
 	<link rel="stylesheet"	type="text/css"	href="/styles/css/styles.css"		media="all" />
 </head>
 <body>
-	<section style="background-image: url(<?=ROOT_URL?>/images/404.jpg); min-height:100vh;">
+	<section style="background-image: url(<?=ROOT_URL?>/images/404.png); min-height:100vh;">
 		<div class="container text-white pt-5">
-			<a href="/">
-				<img class="pt-5" src="<?=ROOT_URL?>/images/sccf-logo-white.png" style="max-width: 175px;" alt="SCCF"/>
-			</a>
 			<h1 class="display-4 my-5">Error 404</h1>
-			<h2>There is nothing here... Problem of navigation</h2>
+			<h2>Are you lost?</h2>
 		</div>
 	</section>
 </body>

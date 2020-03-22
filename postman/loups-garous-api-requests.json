@@ -1,8 +1,8 @@
 {
     "info": {
         "_postman_id": "f82b2ed3-f292-4f6a-b59d-411c0d9e718c",
-        "name": "Iris - API - v1",
-        "description": "# Introduction\nThe IRIS API allows for developers to securely access information on loans, invoices, and clients. Our endpoints are clear, concise, and self-explanatory to allow for quick understanding of the web service.\n\n# Authentication\nOur preferred method of authentication is currently on encrypted API keys. We believe this method to not only be very secure, but also allows us to improve and track a user's requests in order to improve their experience.\n# Error Codes\nUsers will be able to expect clean, concise error codes that will inform them of their erroneous requests. From an unknown primary key to incorrectly typed parameters, errors will be communicated clearly. \n\n# Rate limit\nCurrently, there is no rate limit per API key.",
+        "name": "Loups Garous - API - v1",
+        "description": "",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
     "item": [

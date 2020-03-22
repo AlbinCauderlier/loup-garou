@@ -75,7 +75,7 @@
     }
     $query .= " ;";
 
-    $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-games");
+    $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,DB_NAME);
     if (!$conn) {
         echo(json_encode( array("error" => "DB connexion failed") ));
         return;
@@ -91,8 +91,8 @@
         return;
     }
 
-    echo( json_encode( mysqli_fetch_all($users,MYSQLI_ASSOC) ) );
+    echo( json_encode( mysqli_fetch_all($villages,MYSQLI_ASSOC) ) );
 
-    $users->close();
+    $villages->close();
     mysqli_close($conn);
 ?>

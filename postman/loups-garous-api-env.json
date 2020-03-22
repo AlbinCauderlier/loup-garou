@@ -1,10 +1,10 @@
 {
   "id": "f5144aae-156c-4ab2-b315-d338801b472f",
-  "name": "Iris - API - env",
+  "name": "Loups Garous - API - env",
   "values": [
     {
       "key": "url",
-      "value": "http://local.iris.sccf.ch/api/",
+      "value": "http://local.loups-garous.faireuntour.world/api/",
       "enabled": true
     },
     {
