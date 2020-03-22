@@ -9,6 +9,8 @@
     }
 
     $village = json_decode(callAPI('GET',API_URL.'/api/villages/'.$_GET['p2'].'/'), true);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +44,12 @@
 		<section>
 			<div class="container pt-4">
                 Bienvenue !
+
+                <?php
+                    $habitants = json_decode(callAPI('GET',API_URL.'/api/habitants/'), true);
+
+                    print_r( $habitants );
+                ?>
 			</div>
 		</section>
     </main>
