@@ -64,6 +64,7 @@
                     </div>
                     <div class="col-6">
                         <h2>Visio</h2>
+                        <a href="<?= $village['village-jitsi-link'] ?>" target="_blanck"><?= $village['village-jitsi-link'] ?></a>
                     </div>
                 </div>
                 <hr class="my-5"/>
@@ -74,7 +75,13 @@
                             if( empty( $habitant['habitant-card-displayed'] ) && $habitant['habitant-card'] !== "storyteller" ){
                                 echo('<div class="col-md-3 text-center">');
                                     echo('<h3>'.$habitant['habitant-user'].'</h3>');
-                                    echo('<img src="/images/cards/back.png" width="150px"/>');
+
+                                    if( $habitant['habitant-user'] === $user_data['user-id']){
+                                        echo('<img src="/images/cards/'.$habitant['habitant-card'].'.png" width="150px"/>');
+                                    }
+                                    else{
+                                        echo('<img src="/images/cards/back.png" width="150px"/>');
+                                    }
                                 echo('</div>');
                             }
                         }
