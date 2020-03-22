@@ -32,7 +32,7 @@
                         </h1>
                     </div>
                     <div class="col-auto">
-                        <a href="/village/new-habitant/" class="btn btn-outline-light rounded-pill px-3 py-2">
+                        <a href="/village/new-habitant/<?=$_GET['p2']?>/" class="btn btn-outline-light rounded-pill px-3 py-2">
                             <i data-feather="user-plus" class="mr-1"></i> Ajouter un habitant
                         </a>
                     </div>
