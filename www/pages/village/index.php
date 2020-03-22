@@ -57,7 +57,7 @@
                         <?php
                             foreach( $habitants as $habitant ){
                                 if( $habitant['habitant-card'] === "storyteller" ){
-                                    echo('<label>'.$habitant['habitant-user'].'</label>');
+                                    echo('<label>'.$habitant['habitant-user'].'</label><br/>');
                                 }
                             }
                         ?>
@@ -71,7 +71,7 @@
                 <div class="row">
                     <?php
                         foreach( $habitants as $habitant ){
-                            if( empty( $habitant['habitant-card-displayed'] ) ){
+                            if( empty( $habitant['habitant-card-displayed'] ) && $habitant['habitant-card'] !== "storyteller" ){
                                 echo('<div class="col-md-3 text-center">');
                                     echo('<h3>'.$habitant['habitant-user'].'</h3>');
                                     echo('<img src="/images/cards/back.png" width="150px"/>');
@@ -84,7 +84,7 @@
                 <h2>Morts</h2>
                 <?php
                     foreach( $habitants as $habitant ){
-                        if( !empty( $habitant['habitant-card-displayed'] ) ){
+                        if( !empty( $habitant['habitant-card-displayed'] ) && $habitant['habitant-card'] !== "storyteller"  ){
                             echo('<label>'.$habitant['habitant-user'].'</label>');
                         }
                     }
