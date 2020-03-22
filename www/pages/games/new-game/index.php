@@ -30,10 +30,13 @@
         </section>
         <section>
             <div class="container pt-4">
-
-                <?php
-                    include_once("common/forms/form-new-village.php");
-                ?>
+                <div class="row mb-5">
+                    <div class="col-md-4 mx-auto">
+                        <?php
+                            include_once("common/forms/form-new-village.php");
+                        ?>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
