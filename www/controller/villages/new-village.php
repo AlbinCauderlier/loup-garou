@@ -25,13 +25,16 @@
 	$village_name = (isset($_POST['village-name']) ? strip_tags($_POST['village-name']) : '');
 
 	if( !isset($_POST['village-name']) || empty($_POST['village-name']) ){
-		exit('village-name required');
+		// header("location: /games/");
+		// exit();
+		echo('village-name required');
 	}
 
 	// CREATION DE L'UTILISATEUR
 	$query_new_village = "INSERT INTO `villages` (`village-id`, `village-name`, `village-jitsi-link`, `village-state`) 
-										VALUES (NULL, ".$village_name.", 'https://meet.jit.si/'".$village_name.", 'WAITING')";
-	$conn_village = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-games");
+										VALUES (NULL, ".$village_name.", 'https://meet.jit.si/".$village_name.", 'WAITING')";
+
+	$conn_village = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,DB_NAME);
 
 	mysqli_query($conn_village, $query_new_village);
 	mysqli_close($conn_village);
