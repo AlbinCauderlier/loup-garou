@@ -23,14 +23,14 @@
             if( $habitant['habitant-card'] === "storyteller"){
                 $storytellers[] = $habitant;
 
-                if( $user_data['user-id'] === $habitant['habitant-user']){
+                if( $user_data['user-id'] == $habitant['habitant-user']){
                     $is_a_storyteller = true;
                 }
             }
             else{
                 $habitants[] = $habitant;
 
-                if( $user_data['user-id'] === $habitant['habitant-user'] && !empty( $habitant['habitant-card-displayed'] ) ){
+                if( $user_data['user-id'] == $habitant['habitant-user'] && !empty( $habitant['habitant-card-displayed'] ) ){
                     $is_alive = false;
                 }
             }
@@ -59,6 +59,9 @@
                         </h1>
                     </div>
                     <div class="col-auto">
+                        <a href="<?= $_SERVER['HTTP_REFERER'] ?>" class="btn btn-outline-light rounded-pill px-3 py-2 mr-2">
+                            <i data-feather="refresh-cw" class="mr-1"></i> Rafraichir la page
+                        </a>
                         <a href="/village/new-habitant/<?=$_GET['p2']?>/" class="btn btn-outline-light rounded-pill px-3 py-2">
                             <i data-feather="user-plus" class="mr-1"></i> Ajouter un habitant
                         </a>
@@ -92,7 +95,7 @@
                     <?php
                         foreach( $habitants as $habitant ){
                             if( empty( $habitant['habitant-card-displayed'] ) && $habitant['habitant-card'] !== "storyteller" ){
-                                echo('<div class="col-md-3 text-center">');
+                                echo('<div class="col-md-3 text-center mb-3">');
                                     echo('<h3>');
                                         echo($habitant['habitant-user'].' ');
                                         if( !empty( $habitant['habitant-is-the-mayor'] ) ){
@@ -137,6 +140,10 @@
                         }
                     ?>
                 </div>
+                <hr class="my-5"/>
+                <?php
+                    // phpinfo();
+                ?>
                 <hr class="my-5"/>
                 <?php
                     // print_r( $user_data );

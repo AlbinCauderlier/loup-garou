@@ -34,7 +34,9 @@
                     <thead>
                         <tr class="text-center">
                             <th>Village Name</th>
-                            <th>Jitsi</th>
+                            <th>Nombre d'habitants</th>
+                            <th>Visio des Habitants</th>
+                            <th>Visio des Loups Garous</th>
                             <th>Etat</th>
                         </tr>
                     </thead>
@@ -47,7 +49,9 @@
 
                                 echo('<tr>');
                                     echo('<td><a href="/village/'.$village['village-id'].'/">'.$village['village-name'].'</a></td>');
+                                    echo('<td></td>');
                                     echo('<td><a href="'.$village['village-jitsi-link'].'" target="_blank">'.$village['village-jitsi-link'].'</a></td>');
+                                    echo('<td><a href="'.$village['village-jitsi-link'].'loupsgarous" target="_blank">'.$village['village-jitsi-link'].'loupsgarous</a></td>');
                                     echo('<td>'.$village['village-state'].'</td>');
                                 echo('</tr>');
                             }
