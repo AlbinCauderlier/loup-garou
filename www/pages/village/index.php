@@ -7,11 +7,13 @@
         header('Location: '.AUTHENTICATION_LOGOUT_PAGE);
         exit;
     }
+
+    $village = json_decode(callAPI('GET',API_URL.'/api/villages/'.$_GET['p2'].'/'), true);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Game - Loups Garous</title>
+	<title>Village - Loups Garous</title>
     <?php
         include_once("common/head.php");
     ?>
@@ -20,10 +22,17 @@
     <?php
         include_once("common/header.php");
     ?>
-    <main>
+    <main class="mt-0">
+        <section class="bg-gradient my-4 pt-5">
+            <div class="container py-3">
+                <h1 class="text-white">
+                    <i data-feather="home"></i> <?= $village['village-name'] ?>
+                </h1>
+            </div>
+        </section>
 		<section>
 			<div class="container pt-4">
-                Ceci est une partie
+                Bienvenue !
 			</div>
 		</section>
     </main>

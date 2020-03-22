@@ -1,6 +1,6 @@
 <header class="navbar fixed-top navbar-expand-lg bg-white shadow py-0 d-print-none" role="header">
     <div class="container">
-        <a href="/dashboard/" class="navbar-brand py-0 my-2" title="Loups Garous home">
+        <a href="/villages/" class="navbar-brand py-0 my-2" title="Loups Garous home">
             <img src="<?=ROOT_URL?>/images/loups-garous-logo-cartes.png" style="width: 72px;" alt="Loups Garous"/>
             <span class="h2 text-dark font-weight-bold">Loups Garous</span>
         </a>
@@ -15,11 +15,11 @@
                         </button>
                         <div class="dropdown-menu">
                         <?php
-                            if( $_SESSION['page'] === 'games' ){
+                            if( $_SESSION['page'] === 'villages' ){
                                 echo('<a class="dropdown-item text-primary disabled">');
                             }
                             else{
-                                echo('<a href="/games/" class="dropdown-item">');
+                                echo('<a href="/villages/" class="dropdown-item">');
                             }
                             echo('<i data-feather="home" class="mr-1"></i>All');
                             echo('</a>');
@@ -92,8 +92,8 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="/games/new-game/" type="button" class="btn text-white bg-gradient border-0 rounded-pill ml-2 py-2 px-3">
-                            <i data-feather="home" class="mr-1"></i> Créer un nouveau village
+                        <a href="/villages/new-village/" type="button" class="btn text-white bg-gradient border-0 rounded-pill ml-2 py-2 px-3">
+                            <i data-feather="home" class="mr-1"></i> Créer un village
                         </a>
                     </div>
                 </div>

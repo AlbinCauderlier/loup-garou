@@ -8,7 +8,7 @@
 		<div class="row py-5">
 			<div class="col-md-4 mb-3">
 				<h2>
-		            <a href="/dashboard/">
+		            <a href="/villages/">
 		                <img src="<?=ROOT_URL?>/images/loups-garous-logo-cartes.png" style="width: 72px;" alt="Loups Garous"/>
 		                <span class="h2 text-white">Loups Garous</span>
 		            </a>

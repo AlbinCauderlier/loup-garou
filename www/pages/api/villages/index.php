@@ -21,11 +21,11 @@
     $url = explode("/", $_GET['p2']);
     $result=array();
 
-    // S'il n'y a qu'un seul user recherché.
+    // S'il n'y a qu'un seul village recherché.
     if( isset($url[1]) && !empty($url[1])){
         $query = "SELECT * FROM `villages` WHERE `village-id` = '".$url[1]."' LIMIT 1;";
 
-        $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-users");
+        $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,DB_NAME);
         if (!$conn) {
             $result=array_merge($result,array("success" => false ) );
             $result=array_merge($result,array("message" => "DB connexion failed" ) );
@@ -33,24 +33,24 @@
             return;
         }
 
-        $users = mysqli_query($conn, $query);
-        $user = mysqli_fetch_array($users,MYSQLI_ASSOC);
+        $villages = mysqli_query($conn, $query);
+        $village = mysqli_fetch_array($villages,MYSQLI_ASSOC);
 
-        if (empty($user)) {
+        if (empty($village)) {
             header("HTTP/1.1 404 Not Found");
             $result=array_merge($result,array("success" => false ) );
-            $result=array_merge($result,array("message" => "Unknown user in DB" ) );
+            $result=array_merge($result,array("message" => "Unknown village in DB" ) );
             $result=array_merge($result,array("SQL Request" => $query ) );
             echo( json_encode($result) );
             return;
         }
 
-        $users->close();
+        $villages->close();
         mysqli_close($conn);
 
         $result=array();
         $result=array_merge($result,array("success" => true ) );
-        $result=array_merge($result,$user );
+        $result=array_merge($result,$village );
         echo( json_encode($result) );
         return;
     }

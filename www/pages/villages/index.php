@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Dashboard - Loups Garous</title>
+	<title>Villages - Loups Garous</title>
     <?php
         include_once("common/head.php");
     ?>
