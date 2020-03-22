@@ -1,0 +1,2710 @@
+{
+    "info": {
+        "_postman_id": "f82b2ed3-f292-4f6a-b59d-411c0d9e718c",
+        "name": "Iris - API - v1",
+        "description": "# Introduction\nThe IRIS API allows for developers to securely access information on loans, invoices, and clients. Our endpoints are clear, concise, and self-explanatory to allow for quick understanding of the web service.\n\n# Authentication\nOur preferred method of authentication is currently on encrypted API keys. We believe this method to not only be very secure, but also allows us to improve and track a user's requests in order to improve their experience.\n# Error Codes\nUsers will be able to expect clean, concise error codes that will inform them of their erroneous requests. From an unknown primary key to incorrectly typed parameters, errors will be communicated clearly. \n\n# Rate limit\nCurrently, there is no rate limit per API key.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "clients",
+            "item": [
+                {
+                    "name": "clients",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/clients/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "clients",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "client",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/clients/ADE/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "clients",
+                                "ADE",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "clients-per-relation-manager",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/clients/?company-relation-manager=bernard.simonin&company-country=CH",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "clients",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "company-relation-manager",
+                                    "value": "bernard.simonin"
+                                },
+                                {
+                                    "key": "company-country",
+                                    "value": "CH"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "clients-per-credit-limit-amount",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/clients/?credit-limit-amount=3000000.00",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "clients",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "credit-limit-amount",
+                                    "value": "3000000.00"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "clients-per-country",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/clients/?company-country=CH",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "clients",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "company-country",
+                                    "value": "CH"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "new client",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/x-www-form-urlencoded",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "company-name",
+                                    "value": "Zoro",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-name",
+                                    "value": "Zoro",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "company-name",
+                                    "value": "Zoro",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "company-abbr",
+                                    "value": "ZXZ",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-address-line-1",
+                                    "value": "Via Street 16 ",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-address-line-2",
+                                    "value": "1004",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-city",
+                                    "value": "Nice",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-country",
+                                    "value": "FR",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-website",
+                                    "value": "www.google.com",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-phone-number",
+                                    "value": "+1914102942",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-email-address",
+                                    "value": "example@gmail.com",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-fiscal-id",
+                                    "value": "1234512345",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-zefix-link",
+                                    "value": "12345123545",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "facility-agreement-id",
+                                    "value": "ZXZ/HRC/2019",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "facility-agreement-date",
+                                    "value": "2019-11-20",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "credit-limit-amount",
+                                    "value": "99999999.00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "credit-limit-currency",
+                                    "value": "EUR",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "interest-rate",
+                                    "value": "5.25",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "drawdown-fee",
+                                    "value": "0.1",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "minimum-facility-fee",
+                                    "value": "200.00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-relation-manager",
+                                    "value": "dmitri.dogaev",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-account-operator",
+                                    "value": "anna.aleksandridi",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-postal-code",
+                                    "value": "1234",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "penality-fee",
+                                    "value": "0",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "banking-fee",
+                                    "value": "0",
+                                    "type": "text"
+                                }
+                            ],
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/clients/new-client/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "clients",
+                                "new-client",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "wrong id request",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}clients/zzz/",
+                            "host": [
+                                "{{url}}clients"
+                            ],
+                            "path": [
+                                "zzz",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "wrong parameter requests",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}clients/?company-county=CH",
+                            "host": [
+                                "{{url}}clients"
+                            ],
+                            "path": [
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "company-county",
+                                    "value": "CH"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "edit client",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "company-name",
+                                    "value": "Zoro",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-name",
+                                    "value": "Zoro",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "company-name",
+                                    "value": "Zoro",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "company-abbr",
+                                    "value": "ZXZ",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-address-line-1",
+                                    "value": "Via Street 16 ",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-address-line-2",
+                                    "value": "1004",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-city",
+                                    "value": "Nice",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-country",
+                                    "value": "FR",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-website",
+                                    "value": "www.supsup.com",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-phone-number",
+                                    "value": "+1914102942",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-email-address",
+                                    "value": "example@gmail.com",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-fiscal-id",
+                                    "value": "1234512345",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-zefix-link",
+                                    "value": "12345123545",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-relation-manager",
+                                    "value": "dmitri.dogaev",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-account-operator",
+                                    "value": "anna.aleksandridi",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-postal-code",
+                                    "value": "1234",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/clients/edit-client-contact/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "clients",
+                                "edit-client-contact",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "wrong new client",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "company-name",
+                                    "value": "Zoro",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "company-abbr",
+                                    "value": "ZXZ",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "company-address_line_1",
+                                    "value": "Via Street 16 ",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-address_line_2",
+                                    "value": "1004",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-city",
+                                    "value": "Nice",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-country",
+                                    "value": "France",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-website",
+                                    "value": "www.google.com",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-phone-number",
+                                    "value": "+1914102942",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-email-address",
+                                    "value": "example@gmail.com",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-fiscal-id",
+                                    "value": "1234512345",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "company-zefix-link",
+                                    "value": "1234512345",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "facility-agreement-id",
+                                    "value": "ZXZ/HRC/2019",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "facility-agreement-date",
+                                    "value": "2019-11-20",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "credit-limit-amount",
+                                    "value": "99999999.00",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "credit-limit-currency",
+                                    "value": "EUR",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "interest-rate",
+                                    "value": "5.25",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "banking-fee",
+                                    "value": "145",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "drawdown-fee",
+                                    "value": "0.1%",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "minimum-facility-fee",
+                                    "value": "200.00",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "company-account-operator",
+                                    "value": "dmitri.dogaev",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "company-account-operator",
+                                    "value": "anna.aleksandridi",
+                                    "type": "text",
+                                    "disabled": true
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/clients/new-client/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "clients",
+                                "new-client",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "credit notes",
+            "item": [
+                {
+                    "name": "credit notes",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/credit-notes/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "credit-notes",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "new-credit-note",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "invoice-id",
+                                    "value": "ZZZ/101/",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-id",
+                                    "value": "ZZZ_2020_01",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "credit-note-amount-due",
+                                    "value": "10.00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "credit-note-currency",
+                                    "value": "USD",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/credit-notes/new-credit-note/?",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "credit-notes",
+                                "new-credit-note",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "invoice-id",
+                                    "value": " ZZZ/101/",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "loan-id",
+                                    "value": " ZZZ_2020_01",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "amount-due",
+                                    "value": " 10.00",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "credit-note-currency",
+                                    "value": " USD",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "drawdowns",
+            "item": [
+                {
+                    "name": "drawdowns",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": {
+                            "raw": "{{url}}/drawdowns/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "drawdowns",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "drawdowns-per-year",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/drawdowns/?drawdown-date=2019%",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "drawdowns",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "drawdown-date",
+                                    "value": "2019%"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "new drawdown",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "drawdown-currency",
+                                    "value": "EUR",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "drawdown-date",
+                                    "value": "2019-11-19",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "drawdown-value",
+                                    "value": "10.00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-id",
+                                    "value": "FLC/HRC/48/2019",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "drawdown-id",
+                                    "value": "12410240124",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/drawdowns/new-drawdown/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "drawdowns",
+                                "new-drawdown",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "drawdown",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}drawdowns/?loan-id=TRO/HRC/10/2018",
+                            "host": [
+                                "{{url}}drawdowns"
+                            ],
+                            "path": [
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "loan-id",
+                                    "value": "TRO/HRC/10/2018"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "drawdowns-per-currency",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}drawdowns/?drawdown-currency=USD",
+                            "host": [
+                                "{{url}}drawdowns"
+                            ],
+                            "path": [
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "drawdown-currency",
+                                    "value": "USD"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "wrong id request",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}drawdowns/zz/",
+                            "host": [
+                                "{{url}}drawdowns"
+                            ],
+                            "path": [
+                                "zz",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "edit drawdown",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/drawdowns/edit-drawdown/1/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "drawdowns",
+                                "edit-drawdown",
+                                "1",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "wrong drawdown parameter",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}drawdowns/?company-county=CH",
+                            "host": [
+                                "{{url}}drawdowns"
+                            ],
+                            "path": [
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "company-county",
+                                    "value": "CH"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "facility-agreements",
+            "item": [
+                {
+                    "name": "facility-agreements",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/facility-agreements/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "facility-agreements",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "facility-agreement",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/facility-agreements/1/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "facility-agreements",
+                                "1",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "wrong parameters",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}facility-agreements/?company-county=CH",
+                            "host": [
+                                "{{url}}facility-agreements"
+                            ],
+                            "path": [
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "company-county",
+                                    "value": "CH"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "funds",
+            "item": [
+                {
+                    "name": "funds",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/funds/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "funds",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "fund",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/funds/ASIA/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "funds",
+                                "ASIA",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "loans",
+            "item": [
+                {
+                    "name": "loans",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/loans/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "loans",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "loan",
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "111111",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "APIKEY",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/loans/AGRI-HRC-01-2019/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "loans",
+                                "AGRI-HRC-01-2019",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "loans-per-client",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/loans/?loan-fund=PP1",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "loans",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "loan-fund",
+                                    "value": "PP1"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "loans-per-year",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/loans/?loan-initial-due-date=2019%",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "loans",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "loan-initial-due-date",
+                                    "value": "2019%"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "loans-at-due-date",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/loans/outstanding-at-date/2020-01-01/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "loans",
+                                "outstanding-at-date",
+                                "2020-01-01",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "new loans",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "company-abbr",
+                                    "value": "ZXZ",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-id",
+                                    "value": "ZXZ/HRC/11/2022",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-facility-type",
+                                    "value": "Pre-Prefinancing",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-initial-due-date",
+                                    "value": "2022-09-10",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-value",
+                                    "value": "1337.00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-currency",
+                                    "value": "EUR",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-interest-rate",
+                                    "value": "5.25",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-interest-rate-type",
+                                    "value": "fixed",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-drawdown-fee",
+                                    "value": "10.00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-drawdown-fee-rate",
+                                    "value": "1000.00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-minimum-facility-fee",
+                                    "value": "100000.00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-banking-fee",
+                                    "value": "100.00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-penality-fee",
+                                    "value": "10.00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-success-fee",
+                                    "value": "1000.00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-ltv",
+                                    "value": "90.00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-type-of-ltv",
+                                    "value": "I don't know",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-commodity",
+                                    "value": "Coal",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-commodity-type",
+                                    "value": "Energy",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-origin-country",
+                                    "value": "France",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-place-of-storage",
+                                    "value": "Nice",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-destination",
+                                    "value": "Narnia",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-country-of-incorporation",
+                                    "value": "France",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-purchase-incoterm-type",
+                                    "value": "FOB",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-purchase-incoterm-city",
+                                    "value": "Nice",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-purchase-incoterm-country",
+                                    "value": "France",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-sales-incoterm-type",
+                                    "value": "FOB",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-sales-incoterm-city",
+                                    "value": "Narnia",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-sales-incoterm-country",
+                                    "value": "France",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-purchase-payment-term",
+                                    "value": "Pre-Prepayment",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-sales-payment-term",
+                                    "value": "OA",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-supplier-name",
+                                    "value": "Narnia LLC",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-supplier-country",
+                                    "value": "Narnia",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-buyer-country",
+                                    "value": "France",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-buyer-name",
+                                    "value": "Me",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/loans/new-loan/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "loans",
+                                "new-loan",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "loan-per-interest-rate",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/loans/?loan-interest-rate=5.25",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "loans",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "loan-interest-rate",
+                                    "value": "5.25"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "edit loan",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/loans/edit-loan/ADE-HRC-01-2019/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "loans",
+                                "edit-loan",
+                                "ADE-HRC-01-2019",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "loan events",
+            "item": [
+                {
+                    "name": "loan events",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/loan-events/AGRI-HRC-01-2019/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "loan-events",
+                                "AGRI-HRC-01-2019",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "invoices",
+            "item": [
+                {
+                    "name": "invoices",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/invoices/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "invoices",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "invoice",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/invoices/ADE_HRC_USD_2019_10_07/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "invoices",
+                                "ADE_HRC_USD_2019_10_07",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "invoices-per-year",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}invoices/?invoice-date=2019%",
+                            "host": [
+                                "{{url}}invoices"
+                            ],
+                            "path": [
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "invoice-date",
+                                    "value": "2019%"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "invoices-per-status",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/invoices/?invoice-id=%_HRC_%",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "invoices",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "invoice-id",
+                                    "value": "%_HRC_%"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "new invoice",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "invoice-id",
+                                    "value": "ZXZ_HRC_EUR_2019_11_07\"",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "invoice-date",
+                                    "value": "2019-11-07",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "invoice-sending-date",
+                                    "value": "2019-11-07",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "invoice-sent-by",
+                                    "value": "dmitri.dogaev",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "invoice-status",
+                                    "value": "UNPAID",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "invoice-payment-date",
+                                    "value": "null",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "invoice-reminder-date",
+                                    "value": "null",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "invoice-currency",
+                                    "value": "EUR",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/invoices/new-invoice/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "invoices",
+                                "new-invoice",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "invoice-sent-by-settled",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/invoices/?invoice-sent-by=dmitri.dogaev&invoice-status=SETTLED",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "invoices",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "invoice-sent-by",
+                                    "value": "dmitri.dogaev"
+                                },
+                                {
+                                    "key": "invoice-status",
+                                    "value": "SETTLED"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "edit invoice",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/invoices/edit-invoice/ADE_HRC_USD_2019_10_07/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "invoices",
+                                "edit-invoice",
+                                "ADE_HRC_USD_2019_10_07",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "invoices status",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/invoices/status/ADE_HRC_USD_2019_10_07/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "invoices",
+                                "status",
+                                "ADE_HRC_USD_2019_10_07",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "refresh invoices",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/invoices/refresh-cache/ADE_HRC_USD_2019_10_07/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "invoices",
+                                "refresh-cache",
+                                "ADE_HRC_USD_2019_10_07",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "make invoice paid",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "invoice-id",
+                                    "value": "ADE_HRC_USD_2019_10_07",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "invoice-payment-date",
+                                    "value": "2020-01-01",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/invoices/check-invoice-paid/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "invoices",
+                                "check-invoice-paid",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "check invoice sent",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "invoice-id",
+                                    "value": "AGRI_HCA_USD_2020_01_31",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "invoice-sent-date",
+                                    "value": "2020-20-01",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "invoice-sent-by",
+                                    "value": "angelo.ruperti\n",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/invoices/check-invoice-sent/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "invoices",
+                                "check-invoice-sent",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "invoice-lines",
+            "item": [
+                {
+                    "name": "invoice-lines",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/invoice-lines/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "invoice-lines",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "invoice-line",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/invoice-lines/442/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "invoice-lines",
+                                "442",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "invoice-lines-per-client",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/invoice-lines/?invoice-id=%_HCA_USD_2019_%",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "invoice-lines",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "invoice-id",
+                                    "value": "%_HCA_USD_2019_%"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "new invoice-lines",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "loan-id",
+                                    "value": "ZZZ/ZZZ/ZZZ",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "invoice-line-type",
+                                    "value": " some line",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "invoice-line-currency",
+                                    "value": "USD",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "invoice-line-amount",
+                                    "value": "10.00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "invoice-id",
+                                    "value": "191923",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "invoice-line-start-date",
+                                    "value": " 2020-02-02",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "invoice-line-end-date",
+                                    "value": " 2020-02-03",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "invoice-line-interest-rate",
+                                    "value": " 13.37",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "invoice-line-amount-due",
+                                    "value": " 10.00",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/invoice-lines/new-invoice-line/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "invoice-lines",
+                                "new-invoice-line",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "edit invoice-lines",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/invoice-lines/edit-invoice-lines/1/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "invoice-lines",
+                                "edit-invoice-lines",
+                                "1",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "repaids",
+            "item": [
+                {
+                    "name": "repaids",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/repaids/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "repaids",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "repaid",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/repaids/?loan-id=AGRI/HRC/01/2019",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "repaids",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "loan-id",
+                                    "value": "AGRI/HRC/01/2019"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "new repaid",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "repaid-id",
+                                    "value": " 123451234512345",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "loan-id",
+                                    "value": " ZXZ/HRC/12/2022",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "repaid-currency",
+                                    "value": " US",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "repaid-date",
+                                    "value": "2020-01-10",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "repaid-bpp-value-date",
+                                    "value": " null",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "repaid-value",
+                                    "value": "1337.00",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/repaids/new-repaid/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "repaids",
+                                "new-repaid",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "edit repaid",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/repaids/edit-repaid/144/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "repaids",
+                                "edit-repaid",
+                                "144",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "set-bpp-date",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/repaids/set-bpp-value-date/1/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "repaids",
+                                "set-bpp-value-date",
+                                "1",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "users",
+            "item": [
+                {
+                    "name": "users",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/users/?user-profile=relation-manager",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "users",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "user-profile",
+                                    "value": "relation-manager"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "user",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/users/?user-email-address=ac@sccf.ch",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "users",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "user-email-address",
+                                    "value": "ac@sccf.ch"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "new user",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "user-id",
+                                    "value": "angelo.ruperti",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "user-firstname",
+                                    "value": "James",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "user-lastname",
+                                    "value": "Bond",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "user-email-address",
+                                    "value": "jr@sccf.ch",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "user-profile",
+                                    "value": "administrator",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/users/new-user/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "users",
+                                "new-user",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "edit user",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/x-www-form-urlencoded",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "user-firstname",
+                                    "value": "Angelo",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "user-lastname",
+                                    "value": "Ruperti",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "user-email-address",
+                                    "value": "ar@sccf.ch",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "user-profile",
+                                    "value": "administrator",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/users/edit-user/angelo.ruperti/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "users",
+                                "edit-user",
+                                "angelo.ruperti",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "delete user",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/users/delete-user/angelo.ruperti/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "users",
+                                "delete-user",
+                                "angelo.ruperti",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "ibans",
+            "item": [
+                {
+                    "name": "ibans",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}ibans/",
+                            "host": [
+                                "{{url}}ibans"
+                            ],
+                            "path": [
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "iban",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}ibans/LU043610118524710101/",
+                            "host": [
+                                "{{url}}ibans"
+                            ],
+                            "path": [
+                                "LU043610118524710101",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "redemptions",
+            "item": [
+                {
+                    "name": "redemptions",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/redemptions/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "redemptions",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "new redemption",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "redemption-id",
+                                    "value": "1",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "fund-abbr",
+                                    "value": "PP1",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "redemption-price",
+                                    "value": "10.00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "redemption-currency",
+                                    "value": "USD",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "redemption-value-date",
+                                    "value": "2020-01-03",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "redemption-amount",
+                                    "value": " 10.00",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/redemptions/new-redemption/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "redemptions",
+                                "new-redemption",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "subscriptions",
+            "item": [
+                {
+                    "name": "subscriptions",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/subscriptions/?",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "subscriptions",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "subscription-id",
+                                    "value": "DLT/SUBSCR/03-04/2019",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "subscription",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/subscriptions/DLT-SUBSCR-03-01-2019/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "subscriptions",
+                                "DLT-SUBSCR-03-01-2019",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "subscriptions per currency",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/subscriptions/DLT-SUBSCR-03-01-2019/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "subscriptions",
+                                "DLT-SUBSCR-03-01-2019",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "new subscription",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "subscription-id",
+                                    "value": "ZZZ/YO/SS/",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "fund-abbr",
+                                    "value": "PP1",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "subscription-amount",
+                                    "value": "15000000.00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "subscription-price",
+                                    "value": "15000000.00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "subscription-currency",
+                                    "value": "EUR",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "subscription-interest-rate",
+                                    "value": "9.00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "subscription-trade-date",
+                                    "value": "1970-01-01",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "subscription-value-date",
+                                    "value": "2019-03-18",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "subscription-comment",
+                                    "value": "null",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/subscriptions/new-subscription/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "subscriptions",
+                                "new-subscription",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "facility-agreements",
+            "item": [
+                {
+                    "name": "facility-agreements",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/facility-agreements/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "facility-agreements",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "facility agreement",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/facility-agreements/4/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "facility-agreements",
+                                "4",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "facility agreement per abbr",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": ""
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "new facility agreement",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "result",
+                                "value": "",
+                                "type": "text",
+                                "disabled": true
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "company-abbr",
+                                    "value": "SUS",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "fund-abbr",
+                                    "value": "HCA",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "facility-agreement-id",
+                                    "value": "SUS/HCA/2020/01",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "facility-agreement-date",
+                                    "value": "2020-01-01",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "credit-limit-amount",
+                                    "value": "1337.00",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "credit-limit-currency",
+                                    "value": "USD",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/facility-agreements/new-facility-agreement/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "facility-agreements",
+                                "new-facility-agreement",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "get-loan",
+            "item": [
+                {
+                    "name": "get-loan status",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/get-loan/status/TRO-HRC-01-2020/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "get-loan",
+                                "status",
+                                "TRO-HRC-01-2020",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "refresh get-loan",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/get-loan/refresh-cache/FLC-HRC-117-2019/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "get-loan",
+                                "refresh-cache",
+                                "FLC-HRC-117-2019",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "statistics",
+            "item": [
+                {
+                    "name": "statistics",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/statistics/?year=2019",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "statistics",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "year",
+                                    "value": "2019"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "bank-transactions",
+            "item": [
+                {
+                    "name": "bank transactions",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/bank-transactions/?fund-id=HCA",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "bank-transactions",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "fund-id",
+                                    "value": "HCA"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "events",
+            "item": [
+                {
+                    "name": "events",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/loan-events/",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "loan-events",
+                                ""
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        }
+    ],
+    "auth": {
+        "type": "apikey",
+        "apikey": [
+            {
+                "key": "value",
+                "value": "111111",
+                "type": "string"
+            },
+            {
+                "key": "key",
+                "value": "APIKEY",
+                "type": "string"
+            }
+        ]
+    },
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "id": "75f2e603-a2e9-4dc6-ac5b-47b035afc77a",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "id": "3aac511c-4b69-4e28-9ca1-a1a9d4a6059a",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "protocolProfileBehavior": {}
+}

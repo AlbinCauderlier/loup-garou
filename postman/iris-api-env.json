@@ -1,0 +1,19 @@
+{
+  "id": "f5144aae-156c-4ab2-b315-d338801b472f",
+  "name": "Iris - API - env",
+  "values": [
+    {
+      "key": "url",
+      "value": "http://local.iris.sccf.ch/api/",
+      "enabled": true
+    },
+    {
+      "key": "url",
+      "value": "192.168.10.36/api/",
+      "enabled": true
+    }
+  ],
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2019-12-09T15:17:30.152Z",
+  "_postman_exported_using": "Postman/7.11.0"
+}
