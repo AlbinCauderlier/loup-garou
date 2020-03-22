@@ -95,23 +95,23 @@
                                 echo('<div class="col-md-3 text-center">');
                                     echo('<h3>');
                                         echo($habitant['habitant-user'].' ');
-                                        if( !empty( $habitant['habitant-is-the-mayor'] ){
+                                        if( !empty( $habitant['habitant-is-the-mayor'] ) ){
                                             echo('<img src="/images/cards/mayor.jpg" width="30px"/>');
                                         }
                                     echo('</h3>');
 
-                                    // Le joueur peut voir sa carte
-                                    if( $habitant['habitant-user'] === $user_data['user-id']){
+                                    // Si le joueur est le conteur : Voir les cartes
+                                    if( $is_a_storyteller ){
                                         show_the_card( $habitant );
                                     }
-                                    
-                                    // Si le joueur est mort : Voir les cartes
-                                    elseif( !$is_alive ){
-                                        show_the_card( $habitant );   
+
+                                    // Le joueur peut voir sa carte
+                                    elseif( $habitant['habitant-user'] === $user_data['user-id']){
+                                        show_the_card( $habitant );
                                     }
 
-                                    // Si le joueur est le conteur : Voir les cartes
-                                    elseif( $is_a_storyteller ){
+                                    // Si le joueur est mort : Voir les cartes
+                                    elseif( !$is_alive ){
                                         show_the_card( $habitant );   
                                     }
 
@@ -139,15 +139,15 @@
                 </div>
                 <hr class="my-5"/>
                 <?php
-                    print_r( $user_data );
+                    // print_r( $user_data );
                 ?>
                 <hr class="my-5"/>
                 <?php
-                    print_r( $storytellers );
+                    // print_r( $storytellers );
                 ?>
                 <hr class="my-5"/>
                 <?php
-                    print_r( $habitants );
+                    // print_r( $habitants );
                 ?>
 			</div>
 		</section>
