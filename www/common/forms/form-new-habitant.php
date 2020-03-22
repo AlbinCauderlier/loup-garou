@@ -8,7 +8,7 @@
                                                 <i data-feather="home"></i>
                                             </div>
                                         </div>
-                                        <input class="form-control" id="village-name" name="village-name" type="text" placeholder="Nom du village" required readonly/>
+                                        <input class="form-control" id="village-name" name="village-name" type="text" value="<?= $village['village-name'] ?>" required readonly/>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -53,6 +53,6 @@
                                 </div>
                             </div>
                             <button class="btn btn-gradient p-2 mb-5" type="submit">
-                                <i data-feather="home" class="mr-2"></i> Créer le village
+                                <i data-feather="user-plus" class="mr-2"></i> Ajouter l'habitant
                             </button>
                         </form>
