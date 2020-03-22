@@ -3,7 +3,7 @@
 	
 	// Initialisation de la session avec le même domaine pour l'ensemble des sous-domaines.
 	//ini_set('session.cookie_domain',COOKIE_URL);
-	session_set_cookie_params(9000,"/",COOKIE_URL);
+	// session_set_cookie_params(9000,"/",COOKIE_URL);
 	session_start();
 
 	// Rapporter toutes les erreurs PHP
