@@ -6,7 +6,7 @@
 define("EMAIL_HELLO","Hello");
 
 define("EMAIL_CONCLUSION","We remain at your disposal for any further information.");
-define("EMAIL_SIGNATURE","Regards,<br/>The Iris team");
+define("EMAIL_SIGNATURE","Regards,<br/>The Loups Garous team");
 
 define("EMAIL_FOOTER",'	<a href="https://www.linkedin.com/Mubiz">linkedin</a>
 						<a href="https://twitter.com/Mubiz">twitter</a>
