@@ -42,8 +42,6 @@
 	$query_new_habitant = "INSERT INTO `habitants` (`habitant-id`, `habitant-village`, `habitant-user`, `habitant-card`, `habitant-card-displayed`, `habitant-is-the-mayor`) 
 											VALUES (NULL, '".$village_id."', '".$user_id."', '".$card_name."', NULL, NULL);";
 
-	echo( $query_new_habitant );						
-
 	$conn_habitant = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,DB_NAME);
 
 	mysqli_query($conn_habitant, $query_new_habitant);
