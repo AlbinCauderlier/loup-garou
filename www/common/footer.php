@@ -1,28 +1,20 @@
 <?php
-	include_once("common/modals/modal-actions.php");
+	// include_once("common/modals/modal-actions.php");
 
 	get_back_to_top_link("#top");
 ?>
-<footer class="border-top mt-3 d-print-none">
+<footer class="border-top mt-3 d-print-none bg-dark">
 	<div class="container-fluid">
 		<div class="row py-5">
 			<div class="col-md-4 mb-3">
 				<h2>
-		            <a href="/clients/">
-		                <img src="<?=ROOT_URL?>/images/iris-logo2.png" style="max-height:47px;" alt="Loups Garous"/>
+		            <a href="/dashboard/">
+		                <img src="<?=ROOT_URL?>/images/loups-garous-logo-cartes.png" style="width: 72px;" alt="Loups Garous"/>
 		            </a>
 				</h2>
-				© Loups Garous 2020
-			</div>
-			<div class="col-md-4 mb-3">
-				<ul>
-					<li>
-						<a href="/about/" title="About">About Loups Garous</a>
-					</li>
-					<li>
-						<a href="/user-guide/" title="User Guide">User Guide</a>
-					</li>
-				</ul>
+				<span class="text-white">
+					© Loups Garous 2020
+				</span>
 			</div>
 		</div>
 	</div>
@@ -35,17 +27,6 @@
 <script type="text/javascript" src="/js/feather.min.js"></script>
 
 <script type="text/javascript" src="/vendors/DataTables/datatables.min.js"></script>
-<!--
-<script type="text/javascript" src="/vendors/DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="/vendors/DataTables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>
-<script type="text/javascript" src="/vendors/DataTables/Buttons-1.5.6/js/buttons.bootstrap4.min.js"></script>
-<script type="text/javascript" src="/vendors/DataTables/Buttons-1.5.6/js/buttons.flash.min.js"></script>
-<script type="text/javascript" src="/vendors/DataTables/JSZip-2.5.0/jszip.min.js"></script>
-<script type="text/javascript" src="/vendors/DataTables/pdfmake-0.1.36/pdfmake.min.js"></script>
-<script type="text/javascript" src="/vendors/DataTables/pdfmake-0.1.36/vfs_fonts.js"></script>
-<script type="text/javascript" src="/vendors/DataTables/Buttons-1.5.6/js/buttons.html5.min.js"></script>
-<script type="text/javascript" src="/vendors/DataTables/Buttons-1.5.6/js/buttons.print.min.js"></script>
--->
 
 <script type="text/javascript" src="/js/main.js"></script>
 

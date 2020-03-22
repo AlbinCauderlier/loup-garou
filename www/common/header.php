@@ -1,7 +1,7 @@
 <header class="navbar fixed-top navbar-expand-lg bg-white shadow py-0 d-print-none" role="header">
     <div class="container-fluid">
-        <a href="/clients/" class="navbar-brand py-0" title="Loups Garous home">
-            <img src="<?=ROOT_URL?>/images/iris-logo2.png" style="max-height:63px; width: 72px;" alt="Loups Garous"/>
+        <a href="/clients/" class="navbar-brand py-0 my-2" title="Loups Garous home">
+            <img src="<?=ROOT_URL?>/images/loups-garous-logo-cartes.png" style="width: 72px;" alt="Loups Garous"/>
         </a>
         <div class="row">
             <ul class="navbar-nav mr-auto float-left">
