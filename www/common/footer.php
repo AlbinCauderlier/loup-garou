@@ -4,7 +4,7 @@
 	get_back_to_top_link("#top");
 ?>
 <footer class="border-top mt-3 d-print-none bg-dark">
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row py-5">
 			<div class="col-md-4 mb-3">
 				<h2>

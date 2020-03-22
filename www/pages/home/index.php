@@ -38,7 +38,7 @@
 		</section>
 	</main>
 	<?php
-		phpinfo();
+		// phpinfo();
 	?>
 	<script type="text/javascript" src="/vendors/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="/vendors/bootstrap-4.3.1/js/bootstrap.min.js"></script>

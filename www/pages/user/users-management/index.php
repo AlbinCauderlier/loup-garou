@@ -49,7 +49,7 @@
                     </thead>
                     <tbody class="table-borderless border-bottom">
                     <?php
-                        $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,'iris_users');
+                        $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,'loups-garous-users');
 
                         $query = "SELECT * FROM `users-data`";
                         $users = mysqli_query($conn, $query);

@@ -1,6 +1,6 @@
 <header class="navbar fixed-top navbar-expand-lg bg-white shadow py-0 d-print-none" role="header">
-    <div class="container-fluid">
-        <a href="/clients/" class="navbar-brand py-0 my-2" title="Loups Garous home">
+    <div class="container">
+        <a href="/dashboard/" class="navbar-brand py-0 my-2" title="Loups Garous home">
             <img src="<?=ROOT_URL?>/images/loups-garous-logo-cartes.png" style="width: 72px;" alt="Loups Garous"/>
         </a>
         <div class="row">
@@ -9,16 +9,16 @@
                     <div class="dropdown">
                         <button class="dropdown border-0 m-0 p-0" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
                             <a class="nav-link px-3 text-center pb-0 <?php if( strpos($_SESSION['page'], 'client') !== false ) echo('active');?>">
-                                <i data-feather="home"></i><br/>Clients
+                                <i data-feather="home"></i><br/>Villages
                             </a>
                         </button>
                         <div class="dropdown-menu">
                         <?php
-                            if( $_SESSION['page'] === 'clients' ){
+                            if( $_SESSION['page'] === 'games' ){
                                 echo('<a class="dropdown-item text-primary disabled">');
                             }
                             else{
-                                echo('<a href="/clients/" class="dropdown-item">');
+                                echo('<a href="/games/" class="dropdown-item">');
                             }
                             echo('<i data-feather="home" class="mr-1"></i>All');
                             echo('</a>');
@@ -70,9 +70,9 @@
                                 </a>
                             </div>
                         </div>
-                        <button type="button" class="btn text-white bg-gradient border-0 rounded-pill ml-2 py-2 px-3" data-toggle="modal" data-target="#ActionsModal" title="Access to forms for adding data">
-                            <i data-feather="file-plus" class="mr-1"></i> Créer un nouveau village
-                        </button>
+                        <a href="/games/new-game/" type="button" class="btn text-white bg-gradient border-0 rounded-pill ml-2 py-2 px-3">
+                            <i data-feather="home" class="mr-1"></i> Créer un nouveau village
+                        </a>
                     </div>
                 </div>
             </div>

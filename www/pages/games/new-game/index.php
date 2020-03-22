@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Dashboard - Loups Garous</title>
+    <title>New Game - Loups Garous</title>
     <?php
         include_once("common/head.php");
     ?>
@@ -24,16 +24,18 @@
         <section class="bg-gradient my-4 pt-5">
             <div class="container py-3">
                 <h1 class="text-white">
-                    <i data-feather="home"></i> Liste des villages
+                    <i data-feather="home"></i> New village
                 </h1>
             </div>
         </section>
-		<section>
-			<div class="container pt-4">
-                <h1></h1>
-                
-			</div>
-		</section>
+        <section>
+            <div class="container pt-4">
+
+                <?php
+                    include_once("common/forms/form-new-village.php");
+                ?>
+            </div>
+        </section>
     </main>
     <?php
         include_once("common/footer.php");
