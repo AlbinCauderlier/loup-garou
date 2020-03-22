@@ -2,6 +2,7 @@
     <div class="container">
         <a href="/dashboard/" class="navbar-brand py-0 my-2" title="Loups Garous home">
             <img src="<?=ROOT_URL?>/images/loups-garous-logo-cartes.png" style="width: 72px;" alt="Loups Garous"/>
+            <span class="h2 text-dark font-weight-bold">Loups Garous</span>
         </a>
         <div class="row">
             <ul class="navbar-nav mr-auto float-left">

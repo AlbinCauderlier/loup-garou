@@ -19,6 +19,7 @@
                                 </div>
                                 <select id="user-language" name="user-language" class="form-control custom-select border-left-0" required>
                                     <option disabled selected>Profile</option>
+                                    <option value="storyteller">Conteur</option>
                                     <option value="citizen">Villageois</option>
                                     <option value="werewolf">Loup Garou</option>
                                     <option value="witch">Sorcière</option>

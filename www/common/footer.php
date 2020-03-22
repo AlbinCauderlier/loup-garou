@@ -10,6 +10,7 @@
 				<h2>
 		            <a href="/dashboard/">
 		                <img src="<?=ROOT_URL?>/images/loups-garous-logo-cartes.png" style="width: 72px;" alt="Loups Garous"/>
+		                <span class="h2 text-white">Loups Garous</span>
 		            </a>
 				</h2>
 				<span class="text-white">
