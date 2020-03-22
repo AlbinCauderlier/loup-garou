@@ -17,24 +17,29 @@
 	?>
 </head>
 <body id="top">
-	<section class="py-5">
-		<div class="container py-5 text-center">
-			<h2 class="pb-4">
-				<img src="<?=ROOT_URL?>/images/loups-garous-logo.png" style="max-width: 400px;" alt="Loups Garous"/>
-			</h2>
-			<div class="row mb-5">
-				<div class="col-md-4 mx-auto">
-		            <div class="card shadow p-5">
-		                <?php
-		                	display_user_messages();
+	<main>
+		<section class="py-5">
+			<div class="container py-5 text-center">
+				<h2 class="pb-4">
+					<img src="<?=ROOT_URL?>/images/loups-garous-logo.png" style="max-width: 400px;" alt="Loups Garous"/>
+				</h2>
+				<div class="row mb-5">
+					<div class="col-md-4 mx-auto">
+			            <div class="card shadow p-5">
+			                <?php
+			                	display_user_messages();
 
-		                	include_once("lib/auth/forms/form-login.php");
-		                ?>
-		            </div>
+			                	include_once("lib/auth/forms/form-login.php");
+			                ?>
+			            </div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	</main>
+	<?php
+		// phpinfo();
+	?>
 	<script type="text/javascript" src="/vendors/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="/vendors/bootstrap-4.3.1/js/bootstrap.min.js"></script>
 

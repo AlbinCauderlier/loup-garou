@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Dashboard - Loups Garous</title>
+	<title>Game - Loups Garous</title>
     <?php
         include_once("common/head.php");
     ?>
@@ -20,18 +20,10 @@
     <?php
         include_once("common/header.php");
     ?>
-    <main class="mt-0">
-        <section class="bg-gradient my-4 pt-5">
-            <div class="container py-3">
-                <h1 class="text-white">
-                    <i data-feather="home"></i> Liste des villages
-                </h1>
-            </div>
-        </section>
+    <main>
 		<section>
 			<div class="container pt-4">
-                <h1></h1>
-                
+                Ceci est une partie
 			</div>
 		</section>
     </main>
