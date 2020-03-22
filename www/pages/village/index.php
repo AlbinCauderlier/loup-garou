@@ -77,7 +77,8 @@
                                     echo('<h3>'.$habitant['habitant-user'].'</h3>');
 
                                     if( $habitant['habitant-user'] === $user_data['user-id']){
-                                        echo('<img src="/images/cards/'.$habitant['habitant-card'].'.png" width="150px"/>');
+                                        echo('<img src="/images/cards/'.$habitant['habitant-card'].'.png" width="150px"/><br/>');
+                                        echo('<label>'.$habitant['habitant-card'].'</label>');
                                     }
                                     else{
                                         echo('<img src="/images/cards/back.png" width="150px"/>');
@@ -89,13 +90,19 @@
                 </div>
                 <hr class="my-5"/>
                 <h2>Morts</h2>
-                <?php
-                    foreach( $habitants as $habitant ){
-                        if( !empty( $habitant['habitant-card-displayed'] ) && $habitant['habitant-card'] !== "storyteller"  ){
-                            echo('<label>'.$habitant['habitant-user'].'</label>');
+                <div class="row">
+                    <?php
+                        foreach( $habitants as $habitant ){
+                            if( !empty( $habitant['habitant-card-displayed'] ) && $habitant['habitant-card'] !== "storyteller"  ){
+                                echo('<div class="col-md-3 text-center">');
+                                    echo('<h3>'.$habitant['habitant-user'].'</h3>');
+                                    echo('<img src="/images/cards/'.$habitant['habitant-card'].'.png" width="150px"/><br/>');
+                                    echo('<label>'.$habitant['habitant-card'].'</label>');
+                                echo('</div>');
+                            }
                         }
-                    }
-                ?>
+                    ?>
+                </div>
                 <hr class="my-5"/>
                 <?php
                     print_r( $habitants );
