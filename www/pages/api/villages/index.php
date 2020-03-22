@@ -23,7 +23,7 @@
 
     // S'il n'y a qu'un seul user recherché.
     if( isset($url[1]) && !empty($url[1])){
-        $query = "SELECT * FROM `villages` WHERE `user-id` = '".$url[1]."' LIMIT 1;";
+        $query = "SELECT * FROM `villages` WHERE `village-id` = '".$url[1]."' LIMIT 1;";
 
         $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-users");
         if (!$conn) {
@@ -55,8 +55,8 @@
         return;
     }
 
-    $query = 'SELECT * FROM `users-data`';
-    $path = explode( "/users/", utf8_decode(urldecode($_SERVER['REQUEST_URI'])) );
+    $query = 'SELECT * FROM `villages`';
+    $path = explode( "/villages/", utf8_decode(urldecode($_SERVER['REQUEST_URI'])) );
 
     if( isset( $path[1] ) && !empty( $path[1] ) ){
         $parameters_list = explode( "&", $path[1] );
@@ -75,15 +75,15 @@
     }
     $query .= " ;";
 
-    $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-users");
+    $conn = mysqli_connect(DB_URL,DB_USER,DB_PASSWORD,"loups-garous-games");
     if (!$conn) {
         echo(json_encode( array("error" => "DB connexion failed") ));
         return;
     }
 
-    $users = mysqli_query($conn, $query);
+    $villages = mysqli_query($conn, $query);
 
-    if (empty($users)) {
+    if (empty($villages)) {
         $result=array_merge($result,array("success" => false ) );
         $result=array_merge($result,array("message" => "Incorrect Parameters" ) );
         $result=array_merge($result,array("SQL Request" => $query ) );
