@@ -28,15 +28,6 @@ $(document).ready(function () {
 
 	update_datatables();
 
-	update_datatables('.fullscreen-dynamic-datatable', false);
-
-	update_datatables('.operations-dynamic-datatable', true, 5, "desc");
-
-	update_datatables('.clients-operations-dynamic-datatable', true, 4, "desc");
-
-	update_datatables('.invoices-dynamic-datatable', true, 1, "desc");
-
-
 	$('.light-dynamic-datatable').DataTable({
 		pageLength: -1, //50,
 		lengthMenu: [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
@@ -85,7 +76,7 @@ $(document).ready(function () {
 	});
 
 	$('.dataTables_length select').addClass("form-control");
-	$('.dataTables_filter input').addClass("form-control rounded-pill");
+	$('.dataTables_filter input').addClass("form-control rounded-pill mb-2");
 
 	//Display the icones
 	feather.replace();
@@ -215,45 +206,7 @@ function update_datatables( class_name = '.dynamic-datatable', responsive = true
 				sortDescending: ": activer pour trier la colonne par ordre décroissant"
 			}
 		},
-		dom: 'Blfrtip',
-		buttons: [
-		{
-			extend: 'copy',
-			text: '<i data-feather="copy"></i> Copy',
-			className: 'btn-gradient rounded-pill mx-2 ml-2',
-			footer: true
-		},
-		{
-			extend: 'print',
-			text: '<i data-feather="printer"></i> Print',
-			className: 'btn-gradient rounded-pill mr-2',
-			footer: true
-		},
-		{
-			extend: 'csv',
-			text: '<i data-feather="download"></i> CSV',
-			className: 'btn-gradient rounded-pill mr-2',
-			footer: true
-		},
-		{
-			extend: 'pdf',
-			text: '<i data-feather="download"></i> PDF',
-			className: 'btn-gradient rounded-pill mr-2',
-			orientation: 'landscape',
-			footer: true
-		},
-		{
-			extend: 'excelHtml5',
-			text: '<i data-feather="download"></i> Excel',
-			className: 'btn-gradient rounded-pill mr-2',
-			footer: true,
-			exportOptions: {
-					modifier: {
-					page: 'current'
-				}
-			}
-		}
-		],
+		dom: 'lfrtip',
 		"order": [[ order_column, order_way]]
 	});
 }

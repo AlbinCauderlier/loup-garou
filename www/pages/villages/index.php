@@ -24,7 +24,7 @@
         <section class="bg-gradient my-4 pt-5">
             <div class="container py-3">
                 <h1 class="text-white">
-                    <i data-feather="home"></i> Liste des villages
+                    <i data-feather="home"></i> Les villages
                 </h1>
             </div>
         </section>
@@ -33,7 +33,7 @@
                 <table class="table table-hover table-striped border-bottom mb-4 dynamic-datatable">
                     <thead>
                         <tr class="text-center">
-                            <th>Village Name</th>
+                            <th>Village</th>
                             <th>Nombre d'habitants</th>
                             <th>Visio des Habitants</th>
                             <th>Visio des Loups Garous</th>
@@ -51,7 +51,7 @@
                                     echo('<td><a href="/village/'.$village['village-id'].'/">'.$village['village-name'].'</a></td>');
                                     echo('<td></td>');
                                     echo('<td><a href="'.$village['village-jitsi-link'].'" target="_blank">'.$village['village-jitsi-link'].'</a></td>');
-                                    echo('<td><a href="'.$village['village-jitsi-link'].'loupsgarous" target="_blank">'.$village['village-jitsi-link'].'loupsgarous</a></td>');
+                                    echo('<td><a href="'.$village['village-jitsi-link'].'werewolfs" target="_blank">'.$village['village-jitsi-link'].'werewolfs</a></td>');
                                     echo('<td>'.$village['village-state'].'</td>');
                                 echo('</tr>');
                             }

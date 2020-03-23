@@ -51,7 +51,7 @@
     ?>
     <main class="mt-0">
         <section class="bg-gradient my-4 pt-5">
-            <div class="container py-3">
+            <div class="container py-3 mt-4">
                 <div class="row">
                     <div class="col">
                         <h1 class="text-white">
@@ -72,21 +72,59 @@
 		<section>
 			<div class="container pt-4">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-3">
                         <h2>Conteur</h2>
                         <?php
                             foreach( $storytellers as $storyteller ){
                                 echo('<label>'.$storyteller['habitant-user'].'</label><br/>');
                             }
                         ?>
+                        <hr class="my-5"/>
+                        <h2>Personnages</h2>
+                        4 Villageois<br/>
+                        2 Loups-Garous<br/>
+                        1 Chasseur<br/>
+                        1 Sorcière<br/>
                     </div>
-                    <div class="col-4">
-                        <h2>Visio des Habitants</h2>
-                        <a href="<?= $village['village-jitsi-link'] ?>" target="_blanck"><?= $village['village-jitsi-link'] ?></a>
-                    </div>
-                    <div class="col-4">
-                        <h2>Visio des Loups Garous</h2>
-                        <a href="<?= $village['village-jitsi-link'] ?>loupsgarous" target="_blanck"><?= $village['village-jitsi-link'] ?>loupsgarous</a>
+                    <div class="col-9">
+                        <div class="jumbotron py-4">
+                            <h1>Edition Spéciale Confinement</h1>
+                            <p class="lead">
+                                Dans cette version spéciale confinement, tous les habitants se retrouvent dans une grande visio.
+                            </p>
+                            <p class="lead">
+                                Durant la journée, chacun exprime depuis son écran son avis, ses votes... en espérant survivre jusq'au tour suivant.
+                            </p>
+                            <hr/>
+                            <p class="lead">
+                                A la tombée de la nuit,... tous les Villageois éteignent leurs caméras et leurs micros... dans l'attente du réveil par le Conteur.
+                            </p>
+                            <a href="<?= $village['village-jitsi-link'] ?>" target="_blanck" class="btn btn-primary rounded-pill px-3 py-2">
+                                <i data-feather="home" class="mr-1"></i> Rejoindre le village
+                            </a>
+                            <hr/>
+                            <p class="lead">
+                                Pendant ce temps, les Loups-Garous se retrouvent dans une autre visio pour décider de leur victime.
+                                <br/>
+                                Une fois la sinistre décision prise, ... ils se rendorment de leur visio de Loup-Garou, ... et retournent à leur sommeil de Villageois.
+                                <br/>
+                                <a href="<?= $village['village-jitsi-link'] ?>werewolfs" target="_blanck" class="btn btn-secondary rounded-pill px-3 py-2">
+                                    <i data-feather="users" class="mr-1"></i> Rejoindre les Loups-Garous (uniquement si vous êtes un Loup-Garou...)
+                                </a>
+                            </p>
+                            <hr/>
+                            <p class="lead">
+                                Lorsque tous les Loups-Garous se sont rendormis, le Conteur va retrouver la Sorcière dans leur visio pour lui demander si elle souhaite utiliser ses potions.
+                                <br/>
+                                <a href="<?= $village['village-jitsi-link'] ?>witch" target="_blanck" class="btn btn-success rounded-pill px-3 py-2">
+                                    <i data-feather="zap" class="mr-1"></i> Rejoindre la Sorcière (si vous êtes la Sorcière...)
+                                </a>
+                            </p>
+                            <hr/>
+                            <p class="lead">
+                                Le Conteur réveille alors le village... avec souvent, de terribles nouvelles.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <hr class="my-5"/>
@@ -125,6 +163,27 @@
                             }
                         }
                     ?>
+                </div>
+                <hr class="my-5"/>
+                <div class="row">
+                    <div class="col-4">
+                        <h2>Visio de tous les Habitants</h2>
+                        <a href="<?= $village['village-jitsi-link'] ?>" target="_blanck" class="btn btn-primary btn-block rounded-pill px-3 py-2">
+                            <i data-feather="home" class="mr-1"></i> Rejoindre le village
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <h2>Visio des Loups Garous</h2>
+                        <a href="<?= $village['village-jitsi-link'] ?>werewolfs" target="_blanck" class="btn btn-secondary btn-block rounded-pill px-3 py-2">
+                            <i data-feather="users" class="mr-1"></i> Rejoindre les Loups-Garous<br/>(uniquement si vous êtes un Loup-Garou...)
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <h2>Visio de la Sorcière</h2>
+                        <a href="<?= $village['village-jitsi-link'] ?>witch" target="_blanck" class="btn btn-success btn-block rounded-pill px-3 py-2">
+                            <i data-feather="zap" class="mr-1"></i> Rejoindre la Sorcière<br/>(si vous êtes la Sorcière...)
+                        </a>
+                    </div>
                 </div>
                 <hr class="my-5"/>
                 <h2>Cimetière</h2>
