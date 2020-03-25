@@ -42,12 +42,18 @@
                                         <select id="card-name" name="card-name" class="form-control custom-select border-left-0" required>
                                             <option disabled selected>Carte</option>
                                             <option value="storyteller">Conteur</option>
+                                            <option disabled></option>
                                             <option value="citizen">Villageois</option>
-                                            <option value="werewolf">Loup Garou</option>
                                             <option value="witch">Sorcière</option>
+                                            <option value="soothsayer">Voyante</option>
                                             <option value="littlegirl">Petite Fille</option>
                                             <option value="hunter">Chasseur</option>
-                                            <option value="cupid">Cupidon</option>
+                                            <option value="sisters" class="disabled">Soeurs</option>
+                                            <option value="brothers" class="disabled">Frères</option>
+                                            <option disabled></option> 
+                                            <option value="werewolf">Loup Garou</option>
+                                            <option value="grand_mechant_loup" class="disabled">Grand Méchant Loup</option>
+                                            <!-- <option value="cupid">Cupidon</option> -->
                                         </select>
                                     </div>
                                 </div>

@@ -22,10 +22,6 @@
         if( $habitant['habitant-village'] === $_GET['p2']){
             if( $habitant['habitant-card'] === "storyteller"){
                 $storytellers[] = $habitant;
-
-                if( $user_data['user-id'] == $habitant['habitant-user']){
-                    $is_a_storyteller = true;
-                }
             }
             else{
                 $habitants[] = $habitant;
@@ -71,6 +67,44 @@
         </section>
 		<section>
 			<div class="container pt-4">
+                <?php
+                    $storytellers_users = array_column($storytellers, 'habitant-user');
+                    if( in_array( $user_data['user-id'], $storytellers_users) ){
+                        $is_a_storyteller = true;
+                    }
+
+                    // echo('user-data :<br/>');
+                    // print_r( $user_data );
+                    // echo('<br/><br/>');
+                    // echo('storytellers :<br/>');
+                    // print_r( $storytellers );
+                    // echo('<br/><br/>');
+                    // echo('habitants :<br/>');
+                    // print_r( $habitants );
+                    // echo('<br/><br/>');
+
+                    // if( $is_alive ){
+                    //     echo('Alive : Yes<br/>');
+                    // }
+                    // else{
+                    //     echo('Alive : No <br/>');
+                    // }
+
+                    if( $is_a_storyteller ){
+                        $user_card = 'storyteller'; 
+                    }
+                    else{
+                        foreach( $habitants as $habitant ){
+                            if( empty( $habitant['habitant-card-displayed'] ) && $habitant['habitant-card'] !== "storyteller" ){
+                                if( $habitant['habitant-user'] === $user_data['user-id'] ){
+                                    $user_card = $habitant['habitant-card'];
+                                }
+                            }
+                        }
+                    }
+
+                    // echo('<hr class="my-5"/>');
+                ?>
                 <div class="row">
                     <div class="col-3">
                         <h2>Conteur</h2>
@@ -81,10 +115,16 @@
                         ?>
                         <hr class="my-5"/>
                         <h2>Personnages</h2>
-                        4 Villageois<br/>
-                        2 Loups-Garous<br/>
+                        3 Loups-Garous<br/>
+                        1 Grand Méchant Loup<br/>
+                        ---<br/>
+                        3 Villageois<br/>
                         1 Chasseur<br/>
                         1 Sorcière<br/>
+                        1 Voyante<br/>
+                        1 Petite-Fille<br/>
+                        3 Frères<br/>
+                        2 Soeurs<br/>
                     </div>
                     <div class="col-9">
                         <div class="jumbotron py-4">
@@ -93,38 +133,95 @@
                                 Dans cette version spéciale confinement, tous les habitants se retrouvent dans une grande visio.
                             </p>
                             <p class="lead">
-                                Durant la journée, chacun exprime depuis son écran son avis, ses votes... en espérant survivre jusq'au tour suivant.
+                                Durant la journée, chacun exprime depuis son écran son avis, ses votes... en espérant survivre jusqu'au tour suivant.
                             </p>
-                            <hr/>
                             <p class="lead">
-                                A la tombée de la nuit,... tous les Villageois éteignent leurs caméras et leurs micros... dans l'attente du réveil par le Conteur.
+                                A la tombée de la nuit,... tous les habitants éteignent leurs caméras et leurs micros... dans l'attente du réveil par le Conteur.
                             </p>
-                            <a href="<?= $village['village-jitsi-link'] ?>" target="_blanck" class="btn btn-primary rounded-pill px-3 py-2">
-                                <i data-feather="home" class="mr-1"></i> Rejoindre le village
+                            <a href="<?= $village['village-jitsi-link'] ?>" target="_blanck" class="btn btn-primary btn-block rounded-pill px-3 py-2">
+                                <i data-feather="home" class="mr-1"></i> Rejoindre le Village
                             </a>
-                            <hr/>
+                            <hr class="my-4"/>
                             <p class="lead">
-                                Pendant ce temps, les Loups-Garous se retrouvent dans une autre visio pour décider de leur victime.
+                                Alors que le village est endormi, seuls dans leurs chambres, les <b><i>Frères</i></b> et <b><i>Soeurs</i></b> parlent de la journée.
                                 <br/>
-                                Une fois la sinistre décision prise, ... ils se rendorment de leur visio de Loup-Garou, ... et retournent à leur sommeil de Villageois.
-                                <br/>
-                                <a href="<?= $village['village-jitsi-link'] ?>werewolfs" target="_blanck" class="btn btn-secondary rounded-pill px-3 py-2">
-                                    <i data-feather="users" class="mr-1"></i> Rejoindre les Loups-Garous (uniquement si vous êtes un Loup-Garou...)
-                                </a>
+                                <?php
+                                    if( $user_card === "storyteller" || $user_card === "sisters" ){
+                                        echo('<a href="'.$village['village-jitsi-link'].'sisters" target="_blanck" class="btn btn-dark btn-block rounded-pill px-3 py-2 mr-3">');
+                                            echo('<i data-feather="users" class="mr-1"></i> Rejoindre les Soeurs');
+                                        echo('</a>');
+                                    }
+
+                                    if( $user_card === "storyteller" || $user_card === "brothers" ){
+                                        echo('<a href="'.$village['village-jitsi-link'].'brothers" target="_blanck" class="btn btn-dark btn-block rounded-pill px-3 py-2">');
+                                            echo('<i data-feather="users" class="mr-1"></i> Rejoindre les Frères');
+                                        echo('</a>');
+                                    }
+                                ?>
                             </p>
-                            <hr/>
+                            <hr class="my-4"/>
                             <p class="lead">
-                                Lorsque tous les Loups-Garous se sont rendormis, le Conteur va retrouver la Sorcière dans leur visio pour lui demander si elle souhaite utiliser ses potions.
-                                <br/>
-                                <a href="<?= $village['village-jitsi-link'] ?>witch" target="_blanck" class="btn btn-success rounded-pill px-3 py-2">
-                                    <i data-feather="zap" class="mr-1"></i> Rejoindre la Sorcière (si vous êtes la Sorcière...)
-                                </a>
+                                Pendant ce temps, les <b><i>Loups-Garous</i></b> se retrouvent dans une autre visio pour décider de leur victime.
+                                <br/><br/>
+                                Une <b><i>Petite-Fille</i></b> les écoute peut-être... sans montrer ni son visage, ni sa voix.
+                                <br/><br/>
+                                Si la tribu est au grand complet (aucun LG n'a été tué), alors <b><i>Le Grand Méchant Loup</i></b> désigne une 2ème victime qu'il souhaite faire dans le village.
+                                <br/><br/>
+                                Une fois ces sinistres décisions prises, ... <b><i>les Loups-Garous</i></b> se rendorment de leur visio de <b><i>Loups-Garous</i></b>, ... et retournent à leur sommeil de <b><i>Villageois</i></b>.
+                                <?php
+                                    if( $user_card === "storyteller" || $user_card === "werewolf" || $user_card === "grand_mechant_loup" || $user_card === "littlegirl" ){
+                                        echo('<br/><br/>');
+                                        echo('<a href="'.$village['village-jitsi-link'].'werewolfs" target="_blanck" class="btn btn-block btn-secondary rounded-pill px-3 py-2">');
+                                            echo('<i data-feather="users" class="mr-1"></i> Rejoindre les Loups-Garous<br/><small>(si tu es <b><i>la Petite Fille</i></b>, coupe ton micro et ta caméra avant de rejoindre les Loups Garous... pour ne pas te faire manger)</small>');
+                                        echo('</a>');
+                                    }
+                                ?>
                             </p>
-                            <hr/>
+                            <hr class="my-4"/>
                             <p class="lead">
-                                Le Conteur réveille alors le village... avec souvent, de terribles nouvelles.
+                                Lorsque tous <b><i>les Loups-Garous</i></b> se sont rendormis, le Conteur peut aller retrouver <b><i>la Voyante</i></b>.<br/>
+                                Celle-ci lui indique le joueur dont elle aimerait connaitre le rôle.<br/>
+                                <b><i>Le Conteur</i></b>, qui voit toutes les cartes, peut alors lui indiquer le rôle du joueur concerné...<br/>
+                                ... et <b><i>la Voyante</i></b> se rendort.
+                                <br/>
+                                <?php
+                                    if( $user_card === "storyteller" || $user_card === "soothsayer" ){
+                                        echo('<a href="'.$village['village-jitsi-link'].'soothsayer" target="_blanck" class="btn btn-success btn-block rounded-pill px-3 py-2">');
+                                            echo('<i data-feather="eye" class="mr-1"></i> Rejoindre la Voyante');
+                                        echo('</a>');
+                                    }
+                                ?>
+                            </p>
+                            <hr class="my-4"/>
+                            <p class="lead">
+                                Ensuite, <b><i>le Conteur</i></b> va retrouver <b><i>la Sorcière</i></b> pour lui demander si elle souhaite utiliser ses potions.
+                                <br/>
+                                <?php
+                                    if( $user_card === "storyteller" || $user_card === "witch" ){
+                                        echo('<a href="'.$village['village-jitsi-link'].'witch" target="_blanck" class="btn btn-danger btn-block rounded-pill px-3 py-2">');
+                                            echo('<i data-feather="zap" class="mr-1"></i> Rejoindre la Sorcière');
+                                        echo('</a>');
+                                    }
+                                ?>                                    
+                            </p>
+                            <hr class="my-4"/>
+                            <p class="lead">
+                                <b><i>Le Conteur</i></b> réveille alors le village... avec souvent, de terribles nouvelles.
                             </p>
                         </div>
+                    </div>
+                </div>
+                <hr class="my-5"/>
+                <h2>Ta Carte</h2>
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        <?php
+                            echo('<img src="/images/cards/'.$user_card.'.png" width="150px"/><br/>');
+                            echo('<label>'.$user_card.'</label>');
+                        ?>
+                    </div>
+                    <div class="col-md-9">
+                        Explication
                     </div>
                 </div>
                 <hr class="my-5"/>
@@ -166,22 +263,37 @@
                 </div>
                 <hr class="my-5"/>
                 <div class="row">
-                    <div class="col-4">
-                        <h2>Visio de tous les Habitants</h2>
+                    <div class="col-12 mb-5">
+                        <h2>Tous les Habitants</h2>
                         <a href="<?= $village['village-jitsi-link'] ?>" target="_blanck" class="btn btn-primary btn-block rounded-pill px-3 py-2">
-                            <i data-feather="home" class="mr-1"></i> Rejoindre le village
+                            <i data-feather="home" class="mr-1"></i><br/>Rejoindre le village
                         </a>
                     </div>
-                    <div class="col-4">
-                        <h2>Visio des Loups Garous</h2>
+                    <div class="col-3 mb-5">
+                        <h2>Les Loups Garous <small>et la Petite Fille</small></h2>
                         <a href="<?= $village['village-jitsi-link'] ?>werewolfs" target="_blanck" class="btn btn-secondary btn-block rounded-pill px-3 py-2">
-                            <i data-feather="users" class="mr-1"></i> Rejoindre les Loups-Garous<br/>(uniquement si vous êtes un Loup-Garou...)
+                            <i data-feather="users" class="mr-1"></i><br/>Rejoindre les Loups-Garous
                         </a>
                     </div>
-                    <div class="col-4">
-                        <h2>Visio de la Sorcière</h2>
-                        <a href="<?= $village['village-jitsi-link'] ?>witch" target="_blanck" class="btn btn-success btn-block rounded-pill px-3 py-2">
-                            <i data-feather="zap" class="mr-1"></i> Rejoindre la Sorcière<br/>(si vous êtes la Sorcière...)
+                    <div class="col-3 mb-5">
+                        <h2>La Voyante</h2>
+                        <a href="<?= $village['village-jitsi-link'] ?>soothsayer" target="_blanck" class="btn btn-success btn-block rounded-pill px-3 py-2">
+                            <i data-feather="eye" class="mr-1"></i><br/>Rejoindre la Voyante<br/>(si vous êtes la Voyante...)
+                        </a>
+                    </div>
+                    <div class="col-3 mb-5">
+                        <h2>La Sorcière</h2>
+                        <a href="<?= $village['village-jitsi-link'] ?>witch" target="_blanck" class="btn btn-danger btn-block rounded-pill px-3 py-2">
+                            <i data-feather="zap" class="mr-1"></i><br/>Rejoindre la Sorcière<br/>(si vous êtes la Sorcière...)
+                        </a>
+                    </div>
+                    <div class="col-3 mb-5">
+                        <h2>Les Soeurs <br/>et Les Frères</h2>
+                        <a href="<?= $village['village-jitsi-link'] ?>sisters" target="_blanck" class="btn btn-dark btn-block rounded-pill px-3 py-2 mr-3">
+                            <i data-feather="users" class="mr-1"></i><br/>Rejoindre les Soeurs
+                        </a>
+                        <a href="<?= $village['village-jitsi-link'] ?>brothers" target="_blanck" class="btn btn-dark btn-block rounded-pill px-3 py-2">
+                            <i data-feather="users" class="mr-1"></i><br/>Rejoindre les Frères
                         </a>
                     </div>
                 </div>
@@ -199,22 +311,6 @@
                         }
                     ?>
                 </div>
-                <hr class="my-5"/>
-                <?php
-                    // phpinfo();
-                ?>
-                <hr class="my-5"/>
-                <?php
-                    // print_r( $user_data );
-                ?>
-                <hr class="my-5"/>
-                <?php
-                    // print_r( $storytellers );
-                ?>
-                <hr class="my-5"/>
-                <?php
-                    // print_r( $habitants );
-                ?>
 			</div>
 		</section>
     </main>
