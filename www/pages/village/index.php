@@ -269,7 +269,7 @@
                             <i data-feather="home" class="mr-1"></i><br/>Rejoindre le village
                         </a>
                     </div>
-                    <div class="col-3 mb-5">
+                    <!-- <div class="col-3 mb-5">
                         <h2>Les Loups Garous <small>et la Petite Fille</small></h2>
                         <a href="<?= $village['village-jitsi-link'] ?>werewolfs" target="_blanck" class="btn btn-secondary btn-block rounded-pill px-3 py-2">
                             <i data-feather="users" class="mr-1"></i><br/>Rejoindre les Loups-Garous
@@ -295,7 +295,7 @@
                         <a href="<?= $village['village-jitsi-link'] ?>brothers" target="_blanck" class="btn btn-dark btn-block rounded-pill px-3 py-2">
                             <i data-feather="users" class="mr-1"></i><br/>Rejoindre les Frères
                         </a>
-                    </div>
+                    </div> -->
                 </div>
                 <hr class="my-5"/>
                 <h2>Cimetière</h2>
