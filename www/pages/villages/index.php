@@ -36,7 +36,6 @@
                             <th>Village</th>
                             <th>Nombre d'habitants</th>
                             <th>Visio des Habitants</th>
-                            <th>Visio des Loups Garous</th>
                             <th>Etat</th>
                         </tr>
                     </thead>
@@ -51,7 +50,6 @@
                                     echo('<td><a href="/village/'.$village['village-id'].'/">'.$village['village-name'].'</a></td>');
                                     echo('<td></td>');
                                     echo('<td><a href="'.$village['village-jitsi-link'].'" target="_blank">'.$village['village-jitsi-link'].'</a></td>');
-                                    echo('<td><a href="'.$village['village-jitsi-link'].'werewolfs" target="_blank">'.$village['village-jitsi-link'].'werewolfs</a></td>');
                                     echo('<td>'.$village['village-state'].'</td>');
                                 echo('</tr>');
                             }
