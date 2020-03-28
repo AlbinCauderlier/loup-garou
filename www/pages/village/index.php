@@ -114,17 +114,24 @@
                             }
                         ?>
                         <hr class="my-5"/>
-                        <h2>Personnages</h2>
-                        3 Loups-Garous<br/>
-                        1 Grand Méchant Loup<br/>
+                        <h2>Personnages possibles</h2>
+                        Loup-Garou (werewolf)<br/>
+                        Grand Méchant Loup (grand_mechant_loup)<br/>
                         ---<br/>
-                        3 Villageois<br/>
-                        1 Chasseur<br/>
-                        1 Sorcière<br/>
-                        1 Voyante<br/>
-                        1 Petite-Fille<br/>
-                        3 Frères<br/>
-                        2 Soeurs<br/>
+                        Villageois (citizen)<br/>
+                        Chasseur (hunter)<br/>
+                        Sorcière (witch)<br/>
+                        Voyante (soothsayer)<br/>
+                        Petite-Fille (littlegirl)<br/>
+                        Frères (brothers)<br/>
+                        Soeurs (sisters)<br/>
+                        <hr class="my-5"/>
+                        <h2>Personnages dans cette partie</h2>
+                        <?php
+                            foreach( array_column($habitants, 'habitant-card') as $card ){
+                                echo($card.'<br/>');
+                            }
+                        ?>
                     </div>
                     <div class="col-9">
                         <div class="jumbotron py-4">
@@ -139,7 +146,7 @@
                                 A la tombée de la nuit,... tous les habitants éteignent leurs caméras et leurs micros... dans l'attente du réveil par le Conteur.
                             </p>
                             <a href="<?= $village['village-jitsi-link'] ?>" target="_blanck" class="btn btn-primary btn-block rounded-pill px-3 py-2">
-                                <i data-feather="home" class="mr-1"></i> Rejoindre le Village
+                                <i data-feather="home" class="mr-1"></i> Rejoindre le Village<br/><small>(Ouvrir dans un nouvel onglet)</small>
                             </a>
                             <hr class="my-4"/>
                             <p class="lead">
@@ -148,13 +155,13 @@
                                 <?php
                                     if( $user_card === "storyteller" || $user_card === "sisters" ){
                                         echo('<a href="'.$village['village-jitsi-link'].'sisters" target="_blanck" class="btn btn-dark btn-block rounded-pill px-3 py-2 mr-3">');
-                                            echo('<i data-feather="users" class="mr-1"></i> Rejoindre les Soeurs');
+                                            echo('<i data-feather="users" class="mr-1"></i> Rejoindre les Soeurs<br/><small>(Ouvrir dans un nouvel onglet)</small>');
                                         echo('</a>');
                                     }
 
                                     if( $user_card === "storyteller" || $user_card === "brothers" ){
                                         echo('<a href="'.$village['village-jitsi-link'].'brothers" target="_blanck" class="btn btn-dark btn-block rounded-pill px-3 py-2">');
-                                            echo('<i data-feather="users" class="mr-1"></i> Rejoindre les Frères');
+                                            echo('<i data-feather="users" class="mr-1"></i> Rejoindre les Frères<br/><small>(Ouvrir dans un nouvel onglet)</small>');
                                         echo('</a>');
                                     }
                                 ?>
@@ -172,7 +179,7 @@
                                     if( $user_card === "storyteller" || $user_card === "werewolf" || $user_card === "grand_mechant_loup" || $user_card === "littlegirl" ){
                                         echo('<br/><br/>');
                                         echo('<a href="'.$village['village-jitsi-link'].'werewolfs" target="_blanck" class="btn btn-block btn-secondary rounded-pill px-3 py-2">');
-                                            echo('<i data-feather="users" class="mr-1"></i> Rejoindre les Loups-Garous<br/><small>(si tu es <b><i>la Petite Fille</i></b>, coupe ton micro et ta caméra avant de rejoindre les Loups Garous... pour ne pas te faire manger)</small>');
+                                            echo('<i data-feather="users" class="mr-1"></i> Rejoindre les Loups-Garous<br/><small>(si tu es <b><i>la Petite Fille</i></b>, coupe ton micro et ta caméra avant de rejoindre les Loups Garous... pour ne pas te faire manger)</small><br/><small>(Ouvrir dans un nouvel onglet)</small>');
                                         echo('</a>');
                                     }
                                 ?>
@@ -187,7 +194,7 @@
                                 <?php
                                     if( $user_card === "storyteller" || $user_card === "soothsayer" ){
                                         echo('<a href="'.$village['village-jitsi-link'].'soothsayer" target="_blanck" class="btn btn-success btn-block rounded-pill px-3 py-2">');
-                                            echo('<i data-feather="eye" class="mr-1"></i> Rejoindre la Voyante');
+                                            echo('<i data-feather="eye" class="mr-1"></i> Rejoindre la Voyante<br/><small>(Ouvrir dans un nouvel onglet)</small>)');
                                         echo('</a>');
                                     }
                                 ?>
@@ -199,7 +206,7 @@
                                 <?php
                                     if( $user_card === "storyteller" || $user_card === "witch" ){
                                         echo('<a href="'.$village['village-jitsi-link'].'witch" target="_blanck" class="btn btn-danger btn-block rounded-pill px-3 py-2">');
-                                            echo('<i data-feather="zap" class="mr-1"></i> Rejoindre la Sorcière');
+                                            echo('<i data-feather="zap" class="mr-1"></i> Rejoindre la Sorcière<br/><small>(Ouvrir dans un nouvel onglet)</small>');
                                         echo('</a>');
                                     }
                                 ?>                                    
@@ -221,7 +228,73 @@
                         ?>
                     </div>
                     <div class="col-md-9">
-                        Explication
+                        <p>
+                        <?php
+                            if( $user_card === "storyteller"){
+                                echo('Le Conteur ne joue pas mais dirige la partie. Il distribue à chaque joueur 1 carte personnage face cachéee.<br/>
+                                    Le Conteur endort le village et dit «  C’est la nuit tout le village s’endort, les joueurs ferment les yeux »<br/>
+                                    Tous les personnages coupent leurs micros et leurs caméras.');
+                            }
+
+                            elseif( $user_card === "werewolf"){
+                                echo('<h4>LE LOUP-GAROU</h4>');
+                                echo('Chaque nuit, les Loups_garous se retrouvent pour dévorer un Villageois.<br/>
+                                    Le jour, au milieu des autres villageois, ils essaient de masquer leur identité nocturne pour échapper à la vindicte populaire. Ils sont de 1 à 4 selon le nombre et les variantes appliquées.<br/>');
+                                echo('<label>Conseil :</label> un stratagème efficace pour se dédouaner d’une accusation, est de voter contre son partenaire. Encore faut-il que les Villageois le remarque.');
+                            }
+
+                            elseif( $user_card === "citizen"){
+                                echo('<h4>LE VILLAGEOIS</h4>');
+                                echo('Pas de compétence particulière.<br/>Ses seules armes sont la capacité d’analyse des comportements pour identifier les
+                            Loups-Garous et la force de conviction pour empêcher l’exécution de l’innocent qu’il est.');
+                            }
+
+                            elseif( $user_card === "soothsayer"){
+                                echo('<h4>LA VOYANTE</h4>');
+                                echo('Chaque nuit, elle découvre la vraie personnalité d’un joueur de son choix. Elle doit aider les autres villageois, mais
+                            reste discrète pour ne pas être démasquée par les Loups-Garous.<br/>');
+                                echo('<label>Conseil :</label> Attention, si vous avez découvert un Loup-Garou, cela vaut peut-être la peine de vous dévoiler pour accuser le joueur mais pas trop tôt !');
+                            }
+
+                            elseif( $user_card === "hunter"){
+                                echo('<h4>LE CHASSEUR</h4>');
+                                echo('S’il se fait dévorer pas les Loups Garous ou exécuter malencontreusement par les joueurs, le Chasseur a le pouvoir
+                            de répliquer avant de rendre l’âme, en éliminant immédiatement n’importe quel autre joueur de son choix.<br/>');
+                                echo('<label>Conseil :</label> Il est toujours bon en cas d’accusation de se faire passer pour le Chasseur');
+                            }
+
+                            elseif( $user_card === "witch"){
+                                echo('<h4>LA SORCIERE</h4>');
+                                echo('Elle sait concocter 2 potions extrêmement puissantes :<br/>');
+                                echo('- Une potion de guérison, pour ressusciter le joueur tué par les Loups-Garous,<br/>
+                                        - Une potion d’empoissonnement, utilisée la nuit pour éliminer un joueur.<br/>');
+                                echo('La sorcière ne peut utiliser chaque potion qu’une seule fois dans la partie. Elle peut se servir de ses 2 potions dans la même nuit.<br/>');
+                                echo('Le matin suivant, elle pourra, suivant l’usage de ce pouvoir, y avoir 0,1 ou 2 morts. La sorcière peut utiliser les
+                            potions à son profit, et donc se guérir elle-même. Si au bout d’un certain nombre de parties, vous trouvez ce
+                            personnage trop puissant, limitez ses pouvoirs à une seule potion pour la partie.<br/>');
+                                echo('<label>Conseil :</label> Ce personnage devient plus puissant en fin de partie, ne gaspillez pas vos sorts.');
+                            }
+
+                            elseif( $user_card === "littlegirl"){
+                                echo('<h4>LA PETITE FILLE</h4>');
+                                echo('Elle peut, en entrouvrant les yeux, espionner les Loups Garous pendant leur réveil. Si elle se fait surprendre par l’un
+                            d’eux, elle meurt immédiatement (en silence), à la place de la victime désignée. La Petite Fille ne peut espionner que
+                            la nuit, durant le tour d’éveil des Loups-Garous.<br/>');
+                                echo('<label>Conseil :</label> Personnage très puissant, mais très angoissant à jouer. N’hésitez pas à espionner. Cela fait peur mais il faut en profiter rapidement avant d’être éliminé.');
+                            }
+
+                            elseif( $user_card === "grand_mechant_loup"){
+                                echo('<h4>LE GRAND MECHANT LOUP</h4>');
+                                echo('En plus de son rôle de Loup-Garou, le Grand Méchant Loup peut désigner, chaque nuit, une 2ème victime parmis les villageois, tant que tous les Loups-Garous sont encore en vie.<br/>');
+                                echo('<label>Conseil :</label> Le Grand Méchant Loup a tout intérêt à ce que les Loups Garous soient solidaires pendant la journée.');
+                            }
+
+                            else{
+                                echo('Votre personnage est décrit dans les explications ci-dessus.<br/>');
+                                echo('Si besoin, vous pouvez demander au Conteur les explications de votre rôle.');
+                            }
+                        ?>
+                        </p>
                     </div>
                 </div>
                 <hr class="my-5"/>
