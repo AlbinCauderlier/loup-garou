@@ -238,9 +238,9 @@
 
                             elseif( $user_card === "werewolf"){
                                 echo('<h4>LE LOUP-GAROU</h4>');
-                                echo('Chaque nuit, les Loups_garous se retrouvent pour dévorer un Villageois.<br/>
-                                    Le jour, au milieu des autres villageois, ils essaient de masquer leur identité nocturne pour échapper à la vindicte populaire. Ils sont de 1 à 4 selon le nombre et les variantes appliquées.<br/>');
-                                echo('<label>Conseil :</label> un stratagème efficace pour se dédouaner d’une accusation, est de voter contre son partenaire. Encore faut-il que les Villageois le remarque.');
+                                echo('Chaque nuit, les Loups Garous se retrouvent pour dévorer un Villageois.<br/>
+                                    Le jour, au milieu des autres villageois, ils essaient de masquer leur identité nocturne pour échapper à la vindicte populaire.<br/>');
+                                echo('<label>Conseil :</label> Un stratagème efficace pour se dédouaner d’une accusation, est de voter contre son partenaire. Encore faut-il que les Villageois le remarque.');
                             }
 
                             elseif( $user_card === "citizen"){
