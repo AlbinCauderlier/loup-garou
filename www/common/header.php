@@ -1,16 +1,18 @@
 <header class="navbar fixed-top navbar-expand-lg bg-white shadow py-0 d-print-none" role="header">
     <div class="container">
-        <a href="/villages/" class="navbar-brand py-0 my-2" title="Loups Garous home">
-            <img src="<?=ROOT_URL?>/images/loups-garous-logo-cartes.png" style="width: 72px;" alt="Loups Garous"/>
-            <span class="h2 text-dark font-weight-bold">Loups Garous</span>
-        </a>
+        <div class="navbar-brand py-0">
+            <a href="/dashboard/" title="Le Royaume des Confinés">
+                <img src="<?=ROOT_URL?>/images/beareded-monk.jpg" style="height: 50px;" alt="Moine"/>
+                <span class="h2 text-dark font-weight-bold">Le Royaume des Confinés</span>
+            </a>
+        </div>
         <div class="row">
             <ul class="navbar-nav mr-auto float-left">
                 <li class="nav-item">
                     <div class="dropdown">
                         <button class="dropdown border-0 m-0 p-0" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
                             <a class="nav-link px-3 text-center pb-0 <?php if( strpos($_SESSION['page'], 'client') !== false ) echo('active');?>">
-                                <i data-feather="home"></i><br/>Villages
+                                <i data-feather="home"></i><br/>Parties
                             </a>
                         </button>
                         <div class="dropdown-menu">
@@ -19,9 +21,18 @@
                                 echo('<a class="dropdown-item text-primary disabled">');
                             }
                             else{
-                                echo('<a href="/villages/" class="dropdown-item">');
+                                echo('<a href="/werewolfs/villages/" class="dropdown-item">');
                             }
-                            echo('<i data-feather="home" class="mr-1"></i>All');
+                            echo('<i data-feather="home" class="mr-1"></i>Loups Garous');
+                            echo('</a>');
+
+                            if( $_SESSION['page'] === 'dixit' ){
+                                echo('<a class="dropdown-item text-primary disabled">');
+                            }
+                            else{
+                                echo('<a href="/dixit/" class="dropdown-item">');
+                            }
+                            echo('<i data-feather="home" class="mr-1"></i>Dixit');
                             echo('</a>');
                         ?>
                         </div>
@@ -92,9 +103,9 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="/villages/new-village/" type="button" class="btn text-white bg-gradient border-0 rounded-pill ml-2 py-2 px-3">
+                        <!-- <a href="/villages/new-village/" type="button" class="btn text-white bg-gradient border-0 rounded-pill ml-2 py-2 px-3">
                             <i data-feather="home" class="mr-1"></i> Créer un village
-                        </a>
+                        </a> -->
                     </div>
                 </div>
             </div>

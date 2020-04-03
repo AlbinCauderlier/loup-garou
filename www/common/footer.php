@@ -6,15 +6,15 @@
 <footer class="border-top mt-3 d-print-none bg-dark">
 	<div class="container">
 		<div class="row py-5">
-			<div class="col-md-4 mb-3">
+			<div class="col-md-5 mb-3">
 				<h2>
 		            <a href="/villages/">
-		                <img src="<?=ROOT_URL?>/images/loups-garous-logo-cartes.png" style="width: 72px;" alt="Loups Garous"/>
-		                <span class="h2 text-white">Loups Garous</span>
+		                <img src="<?=ROOT_URL?>/images/beareded-monk.jpg" style="height: 50px;" alt="Moine"/>
+		                <span class="h2 text-white">Le Royaume des Confinés</span>
 		            </a>
 				</h2>
 				<span class="text-white">
-					© Loups Garous 2020
+					© Le Royaume des Confinés 2020
 				</span>
 			</div>
 		</div>

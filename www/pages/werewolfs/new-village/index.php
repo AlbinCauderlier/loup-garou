@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>New Game - Loups Garous</title>
+    <title>New Village - Loups Garous</title>
     <?php
         include_once("common/head.php");
     ?>
