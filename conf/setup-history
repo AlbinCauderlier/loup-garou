@@ -1,0 +1,39 @@
+    1  sudo groupadd docker
+    2  sudo usermod -aG docker $USER
+    3  sudo apt-get update
+    4  sudo apt-get remove docker docker-engine docker.io
+    5  sudo apt install docker.io
+    6  sudo systemctl enable docker
+    7  docker --version
+    8  sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    9  sudo chmod +x /usr/local/bin/docker-compose
+   10  docker-compose --version
+   11  git clone https://github.com/AlbinCauderlier/loups-garous.git
+   12  ls -l
+   13  cd loups-garous
+   14  ls -l
+   15  mkdir dump
+   16  cd dump
+   17  nano db.sql
+   
+   18  nano ../www/configuration.php
+   19  cd ..
+   20  docker-compose up -d
+   21  sudo usermod -aG docker $USER
+   22  sudo chmod 755 -R .
+   23  sudo reboot
+   24  ls -l
+   25  cd loups-garous/
+   26  ls -l
+   27  docker-compose up -d
+   28  nano www/configuration.php 
+   29  git pull
+   30  nano www/configuration.php 
+   31  git pull
+   32  git pull --hard
+   34  git reset --hard
+   35  git pull
+   36  nano www/configuration.php 
+   37  git pull
+   38  nano www/configuration.php 
+   39  exit

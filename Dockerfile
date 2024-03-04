@@ -5,7 +5,7 @@ RUN apt-get update && \
 
 RUN apt-get update -y && \ 
 	# apt-get install -y sendmail libpng-dev redis-server &&  \
-	apt-get install -y libpng-dev redis-server &&  \
+	apt-get install -y libpng-dev &&  \
 	apt-get clean 
 	# && \
 	# apt autoremove
@@ -17,10 +17,6 @@ RUN composer --version
 
 RUN docker-php-ext-install mysqli
 RUN docker-php-ext-install gd
-
-# Redis
-RUN pecl install redis
-RUN docker-php-ext-enable redis
 
 # Enable Apache modules
 RUN a2enmod rewrite headers expires deflate remoteip
@@ -34,6 +30,4 @@ ADD conf/vhost.conf /etc/apache2/sites-available/000-default.conf
 ADD conf/apache.conf /etc/apache2/conf-available/z-app.conf
 RUN a2enconf z-app
 
-
-# RUN redis-server --daemonize yes
 # EXPOSE 80 8080
